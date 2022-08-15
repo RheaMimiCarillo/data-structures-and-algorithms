@@ -160,7 +160,7 @@ const createList = (availableItems) => {
 
   // for each object in availableItems, get item name and availability
   // if available === true, add item to grocery list
-  availableItems.forEach((item) =>
+  availableItems.forEach(item =>
   {
     // item is the current object literal in availableItems[]
     // item.available is the value of the available: true/false key/value pair
@@ -190,6 +190,33 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  // output array
+  let output = [];
+
+  arr.forEach(current =>
+  {
+    // if number is divisible by 3 and 5
+    if ((current % 3 === 0) && (current % 5 === 0))
+    {
+      output.push('Fizz Buzz');
+    }
+    // if number is divisible by 3
+    else if(current % 3 === 0)
+    {
+      output.push('Fizz');
+    }
+    // if number divisible by 5
+    else if(current % 5 === 0)
+    {
+      output.push('Buzz');
+    }
+    else
+    {
+      output.push(current);
+    }
+  });
+
+  return output;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -243,7 +270,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
