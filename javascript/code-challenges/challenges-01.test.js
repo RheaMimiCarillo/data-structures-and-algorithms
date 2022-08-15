@@ -8,8 +8,17 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => {
-  // Solution code here...
+const addOne = (arr) =>
+{
+  // new, local array
+  let newArr = [];
+
+  // forEach to traverse and add one to each value
+  // forEach requires a callback function
+  arr.forEach( (value) => newArr.push(value+1));
+
+  // return local array
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,9 +50,9 @@ CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
