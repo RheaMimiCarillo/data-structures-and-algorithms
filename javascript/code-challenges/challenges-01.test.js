@@ -118,17 +118,9 @@ const addValues = (arr, value) => {
 // addNumbers() takes in four arguments and runs stuff as many times as the 'times' argument
 // return a modified array
 const addNumbers = (num, arr, times, callback) => {
-  /*
-  num is number that'll be in the array
-  arr is the array of numbers
-  times is how many times the number should be added to the array
-  callback is the addValues functions above
-
-  I need to forEach on arr, and I need to run each callback on each item as many times as it asks me to
-  I think I need to declare a function that I can use multiple times to run the callback?
-  */
 
   // for loop to run 'times' amount of times
+  // the prompt doesn't say we're limited to forEach on this one
   for(let i = 0; i < times; i++)
   {
     // run callback with arr and num as arguments
@@ -143,7 +135,7 @@ const addNumbers = (num, arr, times, callback) => {
 
 CHALLENGE 6
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -158,7 +150,28 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  // gonna need a for each on availableItems
+  // gonna need to get name and available properties from each item in the array
+  // gonna need to check if (available)
+  // gonna need to add, push, or something each item into my 'grocery list'
+
+  // empty string
+  let groceryList = [];
+
+  // for each object in availableItems, get item name and availability
+  // if available === true, add item to grocery list
+  availableItems.forEach((item) =>
+  {
+    // item is the current object literal in availableItems[]
+    // item.available is the value of the available: true/false key/value pair
+    if (item.available)
+    {
+      groceryList.push(item.name);
+    }
+  });
+
+  // return the grocery list
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
