@@ -108,12 +108,35 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
+// arr is a an array
+// value is a value that'll be pushed to arr
+// addValues takes in an array and a value and pushes the value into the array
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
+// addNumbers() takes in four arguments and runs stuff as many times as the 'times' argument
+// return a modified array
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  /*
+  num is number that'll be in the array
+  arr is the array of numbers
+  times is how many times the number should be added to the array
+  callback is the addValues functions above
+
+  I need to forEach on arr, and I need to run each callback on each item as many times as it asks me to
+  I think I need to declare a function that I can use multiple times to run the callback?
+  */
+
+  // for loop to run 'times' amount of times
+  for(let i = 0; i < times; i++)
+  {
+    // run callback with arr and num as arguments
+    callback(arr,num);
+  }
+
+  // return the original arr[] passed in earlier
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
