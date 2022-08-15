@@ -13,9 +13,9 @@ const addOne = (arr) =>
   // new, local array
   let newArr = [];
 
-  // forEach to traverse and add one to each value
+  // traverse through arr and add one to the value at each index
   // forEach requires a callback function
-  arr.forEach( (value) => newArr.push(value+1));
+  arr.forEach(value => newArr.push(value + 1));
 
   // return local array
   return newArr;
