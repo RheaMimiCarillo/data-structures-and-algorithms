@@ -72,6 +72,15 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+
+  // forbiddenValues and arr are arrays of values to be compared
+  // we want to return a new array with every value in arr that's not in forbiddenValues
+  // ex: forbiddenValues = [3,1,2,'poop']
+  // arr = [1,]
+
+  let samesArray = arr.filter(thing => !forbiddenValues.includes(thing));
+
+  return samesArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
