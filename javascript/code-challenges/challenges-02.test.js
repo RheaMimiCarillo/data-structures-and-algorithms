@@ -44,6 +44,12 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
+  // arr is an array of strings
+
+  // must use .map()
+  let inquisitiveArr = arr.map(string => string + '?');
+
+  return inquisitiveArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
