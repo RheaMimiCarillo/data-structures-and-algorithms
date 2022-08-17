@@ -9,7 +9,17 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 ------------------------------------------------------------------------------------------------ */
 
 const raisedToTheThird = (arr) => {
-  // Solution code here...
+  // arr is an array of numbers
+
+  // make a new array 
+  let thirdPowArr = [];
+
+  // raise each value in arr to the power of 3 and push to thirdPowArr
+  arr.forEach(num => thirdPowArr.push(Math.pow(num, 3)));
+
+  // console.log(thirdPowArr);
+  // return the array
+  return thirdPowArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -20,6 +30,10 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
+
+  let arrPlusOne = arr.map(num => num + 1);
+
+  return arrPlusOne;
 };
 
 /* ------------------------------------------------------------------------------------------------
