@@ -58,7 +58,7 @@ const oddValues = (arr) => {
   // arr is an array of integers
   // function takes in an array of integers and return a new array of only the odd values
 
-  let oddArr = arr.filter(num => num % 2 != 0);
+  let oddArr = arr.filter(num => num % 2 !== 0);
   return oddArr;
 };
 
