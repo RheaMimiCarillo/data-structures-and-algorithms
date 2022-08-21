@@ -76,6 +76,24 @@ console.log(sum);
 use cases:
 - can be useful for getting a running total from an array of numbers
 - or to get a total of all values added together
+- reversing a string
+  - example:
+  // initial string
+  let string = 'ur mom';
+
+  // string turned into an array of letters
+  let stringArray = string.split('');
+
+  let reversedString = stringArray.reduce((reversedString, currentLetter) =>
+  {
+    return currentLetter + newString;
+  }, '')
+
+// .reduce() takes an array and makes a new value from some things in an array
+// we can use that value and push them into a new array, as well
+// useful for accumulators
+// "manipulating the array"
+// also useful for manipulating an array and returning an object, instead of another array
 
 */
 
@@ -92,6 +110,9 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
+  let peopleArr = people.map(person => `${person.firstName} ${person.lastName}`);
+
+  return peopleArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
