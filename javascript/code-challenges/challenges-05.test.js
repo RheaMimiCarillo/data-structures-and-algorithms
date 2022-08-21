@@ -1,5 +1,46 @@
 'use strict';
 
+/* Notes
+w ? t : f
+ternary: some stuff ? result1 : result2;
+
+w or some stuff: is what I'd put in the parenthesis of an if statement
+ex:
+
+t or result1: is the expression that'd go in the brackets of an if
+
+f or result2: is the expression that'd go in the else brackets
+
+note: ternary can inherently return something by default
+
+use cases:
+cases where we're checking only a single condition is true or false and then only need to return one thing or another thing and have the result set to a single variable
+
+ternary can make for some obscure code, because it's not always visually explicit that multiple things are happening (not self-commenting)
+
+// regular if version
+if (number >= 50)
+{
+  return 'might be 50';
+}
+else
+{
+  return 'not fifty enough';
+}
+
+// ternary version
+number >= 50 ? 'might be 50' : 'not fifty enough';
+
+
+when not to use a ternary:
+- ternary can make for some obscure code, because it's not always visually explicit that multiple things are happening (not self-commenting)
+
+- ternary can't directly compare more than two conditions with one expression
+  - we'd have to nest ternaries, which can look cluttered, visually
+  - just because we can, doesn't mean we should
+
+*/
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -323,31 +364,31 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
