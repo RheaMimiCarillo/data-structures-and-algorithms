@@ -41,6 +41,44 @@ when not to use a ternary:
 
 */
 
+/* Array.reduce() notes
+
+  Array.reduce() syntax
+  parameters: (accumulator, value, index)
+  the accumulator is initially a 'placeholder for the final value that is returned'
+
+  Arrays.reduce() does not inherently mutate the initial array
+
+// an array of integers
+let numbers = [1, 2, 3, 4];
+
+
+let sum = numbers.reduce(function(accumulator, value, idx) {
+
+  // what the accumulator and value look like at the start of each iteration
+  console.log(`at [${idx}] ${accumulator} + ${value}=`);
+
+  // operation done to the accumulator this iteration
+  accumulator = accumulator + value;
+
+  // final value of accumulator for this iteration
+  console.log(accumulator);
+  return accumulator;
+}, 0);
+
+// final value of sum would be 10
+console.log(sum);
+
+
+  arrow function syntax:
+  array.reduce((accumulator, value, index) =>, initialValueOfAccumulator);
+
+use cases:
+- can be useful for getting a running total from an array of numbers
+- or to get a total of all values added together
+
+*/
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
