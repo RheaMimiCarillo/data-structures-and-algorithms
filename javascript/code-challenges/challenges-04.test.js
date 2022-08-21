@@ -9,7 +9,7 @@ converting each element into strings,
 comparing the UTF-16 values of each stringified element
 and then returning (a reference to) the same array
 
-behind the scenes, .sort() is comparing two indices at a time, from 0 upwards
+behind the scenes, I'm guessing .sort() is comparing two or three indices at a time, from 0 upwards??
 ex: 0 and 1
 then 1 and 2
 then 2 and 3
@@ -49,7 +49,7 @@ compareFunction(a, b)
 === 0 (a is the same as b)
   - a and b stay in the same order
 
-  example:
+  example (from MDN):
 
   function compareFn(a, b)
   {
@@ -65,7 +65,7 @@ compareFunction(a, b)
     return 0;
 }
 
-in other words, a good comparitor will have good symmetry and always be able to return `-1`, `0`, and `1`
+in other words, a good comparator will have good symmetry and always be able to return `-1`, `0`, and `1`
 
 arrays of objects (or object literals) can be compared using the values of one of their properties
 
@@ -134,6 +134,12 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) => {
   // Solution code here...
+
+  // arr is an array of numbers
+  // return an array sorted from lowest to highest
+
+  // return an array where a and b are compared and if a - b is a positive number, a is larger than b and will switch indices with b
+  return arr.sort((a,b) => a - b);
 };
 
 /* ------------------------------------------------------------------------------------------------
