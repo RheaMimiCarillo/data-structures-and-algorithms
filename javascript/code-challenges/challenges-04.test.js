@@ -24,7 +24,19 @@ function lower(str) {
 
 const updateAnimal = (arr, callback) => {
   // Solution code here...
+
+  // write `updateAnimal`
+  // 1. create a new array
+  // 2. traverse the array
+  // 3. modify each value using a callback function
+  // 4. push the modified value into the new array
+  // 5. return the new array
+
   // arr is an array of strings
+
+  let sortedAnimals = arr.map(animal => callback(animal));
+
+  return sortedAnimals;
 };
 
 /* ------------------------------------------------------------------------------------------------
