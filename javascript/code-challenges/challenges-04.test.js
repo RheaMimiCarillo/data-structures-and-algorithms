@@ -167,6 +167,9 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+
+  // how is different from challenge 2??
+  return arr.sort();
 };
 
 /* ------------------------------------------------------------------------------------------------
