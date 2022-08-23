@@ -24,6 +24,23 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
+  // arr is an array of people objects
+  // we want to get the object.name propery
+  // then split it
+  // then use filter to return a reversed string to .map?
+
+  // this isn't quite working as intended
+  let reversedNames = arr.map(person =>
+  {
+    let personCharArr = person.name.split('');
+    personCharArr.reduce((reversedString, currentLetter) =>
+    {
+      // the string is backwards, because we're taking the current letter and then concatenating the letters that come before it, after it
+      return currentLetter + reversedString;
+    }, '');
+    return personCharArr;
+  });
+  return reversedNames;
 };
 
 /* ------------------------------------------------------------------------------------------------
