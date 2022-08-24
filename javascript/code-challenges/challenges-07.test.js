@@ -38,6 +38,8 @@ Write a function named removeThree that takes an index and an array. The functio
 
 const removeThree = (idx, arr) => {
   // Solution code here...
+  arr.splice(idx,3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,6 +68,15 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  // .slice() can take in two arguments:
+  // one for the starting index, and one for the ending index
+  // slice returns a NEW string and doesn't alter the original
+  for (let i = 0; i < str.length + 1; i++)
+  {
+    // str.length +1, because we want to get the last letter in the string, too
+    // or it could be i <= stir.length
+    result.push(str.slice(i));
+  }
   return result;
 };
 
