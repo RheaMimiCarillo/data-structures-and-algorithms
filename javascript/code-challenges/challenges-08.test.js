@@ -143,6 +143,8 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+
+  // str is a single string of many words
 };
 
 /* ------------------------------------------------------------------------------------------------
