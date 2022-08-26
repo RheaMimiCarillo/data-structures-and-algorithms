@@ -1,5 +1,9 @@
 'use strict';
 
+/* notes from class: two dimensional arrays
+
+
+*/
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
