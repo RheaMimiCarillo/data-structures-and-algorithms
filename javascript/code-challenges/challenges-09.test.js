@@ -118,6 +118,11 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach(character =>
+  {
+    houses.push(character.house);
+  });
+
   return houses;
 };
 
@@ -135,6 +140,21 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let kids = 0;
+
+  arr.forEach(person => {
+    if (person.name === character) {
+      // Object.keys makes an array of keys
+      Object.keys(person).forEach((key, idx) => {
+        // use the key
+        if (key === 'children') {
+          kids = Object.values(person[idx].length);
+        }
+      });
+    }
+  });
+  // if kids has any value other than 0, return true, else, return false
+  return kids ? true : false;
 
 };
 
