@@ -128,8 +128,12 @@ let starWarsData = [{
   gender: 'female'
 }];
 
+// use starWarsData to returns the names of the characters who are either 'male' or 'female'
+// cocatenate the array into a single long string, with words separated by 'and'
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  // data is an array of objects with gender and name properties
+  return data.filter(character => character.gender === 'male' || character.gender === 'female').map(character => character.name).join(' and');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,6 +144,16 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+  // solution from class:
+  // return data, and use reduce
+  // compare two values in array
+  // if the first is shorter than the next one:
+  // return the shorter one
+  // else, return thenext one
+  // data.reduce will return the object
+  // then look for just the name property of just the object returned by .reduce()
+  // and return that final name
+  return data.reduce((shortestSoFar, nextCharacter) => Number(shortestSoFar.height) < Number(nextCharacter.height) ? shortestSoFar = nextCharacter : nextCharacter).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
