@@ -1,5 +1,23 @@
 'use strict';
 /*
+  .includes() - Does a string include another?
+
+
+  .substring() - Returns part of a string between indexes
+
+
+  .charAt() - Returns the character at an indexed position
+
+
+  .charCodeAt() - Returns the ASCII Code of a character
+
+
+  .fromCharCode() - Returns a letter from ASCII Code
+
+
+
+
+
 
   // haystack.includes(needle))
   array.includes('value')
@@ -25,6 +43,7 @@ Write a function named longestString that takes in an array of strings and retur
 
 const longestString = (arr) => {
 // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
