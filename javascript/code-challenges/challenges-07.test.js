@@ -77,7 +77,7 @@ const howMuchPencil = (str) => {
   for (let i = 0; i < str.length + 1; i++)
   {
     // str.length +1, because we want to get the last letter in the string, too
-    // or it could be i <= stir.length
+    // or it could be i <= str.length
     result.push(str.slice(i));
   }
   return result;
@@ -93,6 +93,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 
