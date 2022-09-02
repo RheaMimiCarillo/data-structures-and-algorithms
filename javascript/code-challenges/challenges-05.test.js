@@ -75,6 +75,13 @@ Note: You may not use the array's built-in length property.
 const countNumberOfElements = (arr) =>
 {
   // Solution code here...
+  // arr is an array
+  // count the length of an array
+  let arrLength = 0;
+
+  arr.forEach(element => arrLength++);
+
+  return arrLength;
 };
 
 /* ------------------------------------------------------------------------------------------------
