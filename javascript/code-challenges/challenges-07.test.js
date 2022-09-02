@@ -28,6 +28,8 @@ const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
   // starWarsArr is an array of objects
   // use sort to rearrange elements within the original array, by `height`
+
+  return starWarsArr.sort((characterA, characterB) => characterB.height - characterA.height);
 };
 
 /* ------------------------------------------------------------------------------------------------
