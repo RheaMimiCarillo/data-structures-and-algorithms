@@ -22,24 +22,26 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
+const getNames = (arr) =>
+{
   // Solution code here...
-  // arr is an array of people objects
-  // we want to get the object.name propery
-  // then split it
-  // then use filter to return a reversed string to .map?
-
-  // this isn't quite working as intended
+  // map through array of object with 'name' properties
   let reversedNames = arr.map(person =>
   {
+    // turn each person's name into an array of letters
     let personCharArr = person.name.split('');
-    personCharArr.reduce((reversedString, currentLetter) =>
+
+    let reversedString = personCharArr.reduce((acc, val) =>
     {
       // the string is backwards, because we're taking the current letter and then concatenating the letters that come before it, after it
-      return currentLetter + reversedString;
+      return val + acc;
     }, '');
-    return personCharArr;
+
+    // return the reversed name of current element
+    return reversedString;
   });
+
+  // return the final array of reversed names
   return reversedNames;
 };
 
@@ -50,8 +52,10 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = (str) => {
+const appendTheEnd = (str) =>
+{
   // Solution code here...
+  return `${str} The end.`;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -67,8 +71,12 @@ appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
-const appendFirstToLast = (arr) => {
+const appendFirstToLast = (arr) =>
+{
   // Solution code here...
+  // arr is an array of nums or something
+
+  arr.push(arr[0]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -86,8 +94,10 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
+const addBirthYearProperty = (obj, year) =>
+{
   // Solution code here...
+  obj['yearBorn'] = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,7 +113,8 @@ setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
-const setStatusAsAuthor = (people) => {
+const setStatusAsAuthor = (people) =>
+{
   // Solution code here...
 };
 
@@ -122,7 +133,8 @@ append(a, b);
 console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
-const append = (arr1, arr2) => {
+const append = (arr1, arr2) =>
+{
   // Solution code here...
 
 };
@@ -138,15 +150,19 @@ Run your tests from the console: jest challenges-02.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
-  test('It returns an array of names reversed', () => {
-    expect(getNames([{name:'lloyd', age: 32, shoeSize: 12}, {name:'jamie', age:21, shoeSize: 8}])).toStrictEqual(['dyoll', 'eimaj']);
+describe('Testing challenge 1', () =>
+{
+  test('It returns an array of names reversed', () =>
+  {
+    expect(getNames([{ name: 'lloyd', age: 32, shoeSize: 12 }, { name: 'jamie', age: 21, shoeSize: 8 }])).toStrictEqual(['dyoll', 'eimaj']);
     expect(getNames([])).toStrictEqual([]);
   });
 });
 
-describe('Testing challenge 2', () => {
-  test('It should append without modifying the oiginal', () => {
+describe('Testing challenge 2', () =>
+{
+  test('It should append without modifying the oiginal', () =>
+  {
     const a = 'This is my story.';
     const b = appendTheEnd(a);
 
@@ -155,8 +171,10 @@ describe('Testing challenge 2', () => {
   });
 });
 
-describe('Testing challenge 3', () => {
-  test('It should append by modifying the oiginal', () => {
+describe('Testing challenge 3', () =>
+{
+  test('It should append by modifying the oiginal', () =>
+  {
     const a = ['Yes', 'it', 'is'];
     appendFirstToLast(a);
 
@@ -164,8 +182,10 @@ describe('Testing challenge 3', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
-  test('It should add a property to an object', () => {
+describe('Testing challenge 4', () =>
+{
+  test('It should add a property to an object', () =>
+  {
     const a = { fullName: 'Octavia Butler' };
     addBirthYearProperty(a, 1947);
 
@@ -173,8 +193,10 @@ describe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
-  test('It should add a property to every object in an array', () => {
+describe('Testing challenge 5', () =>
+{
+  test('It should add a property to every object in an array', () =>
+  {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
 
@@ -184,8 +206,10 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe('Testing challenge 6', () => {
-  test('It should append the second array to the first', () => {
+describe('Testing challenge 6', () =>
+{
+  test('It should append the second array to the first', () =>
+  {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
     append(a, b);
