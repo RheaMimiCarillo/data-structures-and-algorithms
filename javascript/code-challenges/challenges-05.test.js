@@ -144,6 +144,15 @@ let starWarsData = [{
 const returnNames = (arr) =>
 {
   // Solution code here...
+  // arr is an array of object with `name` property
+
+  let spaceyNames = arr.reduce((accumulator, value, idx) =>
+  {
+    accumulator[idx] = value.name;
+    return accumulator;
+  },[]);
+
+  return spaceyNames;
 };
 
 /* ------------------------------------------------------------------------------------------------
