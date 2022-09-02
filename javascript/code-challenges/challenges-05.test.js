@@ -55,6 +55,13 @@ Write a function named addPurchases that, given an array of objects as input, us
 const addPurchases = (arr) =>
 {
   // Solution code here...
+  // arr is an array of object with a `purchasePrice` property that is a number
+  let total = arr.reduce((accumulator, value) =>
+  {
+    return accumulator += value.purchasePrice;
+  }, 0);
+
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
