@@ -153,9 +153,6 @@ const listFoods = (recipe) =>
     2. make an expression for each and every thing, literally
     3. pass test
     4. cri
-
-
-
   */
 
   recipe.ingredients.forEach(ingredient =>
