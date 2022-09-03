@@ -149,55 +149,68 @@ const listFoods = (recipe) =>
   // Solution code here...
   /*
     brute force solution:
-    1. loop through the `.ingredients` array
-    2. make an expression for each and every thing, literally
-    3. pass test
-    4. cri
+    loop through the `.ingredients` array
+    make an expression for each and every thing, one by one
+    pass test
+    cri
   */
 
+  /*
   recipe.ingredients.forEach(ingredient =>
   {
     switch (ingredient)
     {
-    case '1 medium-sized Gruffalo':
-      result.push(ingredient.slice(15));
-      break;
-    case '8 pounds oats':
-      result.push(ingredient.slice(9));
-      break;
-    case '2 pounds brown sugar':
-      result.push(ingredient.slice(9));
-      break;
-    case '4 pounds flour':
-      result.push(ingredient.slice(9));
-      break;
-    case '2 gallons pure maple syrup':
-      result.push(ingredient.slice(10));
-      break;
-    case '16 cups chopped nuts':
-      result.push(ingredient.slice(8));
-      break;
-    case '1 pound baking soda':
-      result.push(ingredient.slice(8));
-      break;
-    case '1 pound baking powder':
-      result.push(ingredient.slice(8));
-      break;
-    case '1 pound cinnamon':
-      result.push(ingredient.slice(8));
-      break;
-    case '6 gallons melted butter':
-      result.push(ingredient.slice(10));
-      break
-    case '2 gallons fresh water':
-      result.push(ingredient.slice(10));
-      break;
-    default:
-      console.log(`Sorry, we are out of ${ ingredient }.`);
-      break;
+      case '1 medium-sized Gruffalo':
+        result.push(ingredient.slice(15));
+        break;
+      case '8 pounds oats':
+        result.push(ingredient.slice(9));
+        break;
+      case '2 pounds brown sugar':
+        result.push(ingredient.slice(9));
+        break;
+      case '4 pounds flour':
+        result.push(ingredient.slice(9));
+        break;
+      case '2 gallons pure maple syrup':
+        result.push(ingredient.slice(10));
+        break;
+      case '16 cups chopped nuts':
+        result.push(ingredient.slice(8));
+        break
+      case '1 pound baking soda':
+        result.push(ingredient.slice(8));
+        break
+      case '1 pound baking powder':
+        result.push(ingredient.slice(8));
+        break;
+      case '1 pound cinnamon':
+        result.push(ingredient.slice(8));
+        break;
+      case '6 gallons melted butter':
+        result.push(ingredient.slice(10));
+        break
+      case '2 gallons fresh water':
+        result.push(ingredient.slice(10));
+        break;
+      default:
+        console.log(`Sorry, we are out of ${ingredient}.`);
+        break;
     }
-
   });
+  */
+
+  // more elegant solution from Amy Pierce:
+  // for each ingredient
+  recipe.ingredients.forEach((rec) =>
+  {
+    // start at index 3 and look for the first empty space, (' ')
+    // then slice everything after that
+    // then push that sliced substring into the result array
+    result.push(rec.slice(rec.indexOf(' ', 3) + 1));
+  });
+
+  // I hadn't noticed the pattern of the npm test wanting whatever string came after the units in each string until seeing Amy's solution
   return result;
 };
 
