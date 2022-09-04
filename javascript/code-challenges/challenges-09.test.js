@@ -85,7 +85,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) =>
 {
-  // Solution code here...
+  // use Object.keys(obj) to get an array of the keys in the object ['Grace Hopper'] etc
+  // chain.map to loop through the names of the scientists and create a new array
+  // in each loop, use string literal to create a string using the key, then `:` then the value of the array using the key
+  return Object.keys(obj).map(computerScientist => `${computerScientist}: ${obj[computerScientist]}`);
 };
 
 
