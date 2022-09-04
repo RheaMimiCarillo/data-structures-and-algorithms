@@ -125,6 +125,11 @@ For example:
 const isNum = (input) =>
 {
   // Solution code here...
+
+  // this expression will run hot if tested against a string or number of any length that contains any digits
+  let wrejecks = /[0-9]/m;
+
+  return wrejecks.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
