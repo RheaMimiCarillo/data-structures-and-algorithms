@@ -185,9 +185,12 @@ const citiesAtoJ = (arr) =>
   // Solution code here...
 
   // declare a pattern
+  // use `^` to look at first character in a string
+  // use `[A-J]` to look for all letters between capitalized `A` up to, and including `J`
   const pattern = /^[A-J]/;
 
   // filter the array of city names to returns an array of cities that meet the pattern criteria
+  // if a `city` in the `cities` array has a first letter that is capitalized and between A and J, return that whole city to the filtered array
   return arr.filter(city => pattern.test(city));
 };
 
