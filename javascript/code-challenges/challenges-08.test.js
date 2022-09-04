@@ -161,8 +161,17 @@ Return an array containing all the matches.
 const isCapitalized = (str) =>
 {
   // Solution code here...
-
   // str is a single string of many words
+
+  // this expression uses `[A-Z]` to see if a word starts with a capital letter
+  // then uses +[a-zA-Z]* to see if the capital letter is followed by any number of letters that can be uppercase or lowercase
+  // then uses the `gm` flags to keep searching after the first match, and to search across all lines
+  let wrejecks = /[A-Z]+[a-zA-Z]*/gm;
+
+  // .match returns an array of all of the matches OR return an empty array [] if there are no matches
+  return str.match(wrejecks)||[];
+
+  // I HAVE NO IDEA WHY THE TEST STILL FAILS.
 };
 
 /* ------------------------------------------------------------------------------------------------
