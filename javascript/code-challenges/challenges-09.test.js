@@ -41,6 +41,9 @@ const courseInfo = {
 const getCourseKeys = (obj) =>
 {
   // Solution code here...
+
+  // Object.keys() returns an array of all of the `keys` in an object's properties
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -54,12 +57,17 @@ Write a function named checkValues that takes in an object and a value and retur
 const checkValues = (obj, value) =>
 {
   // Solution code here...
+
+  // Object.values() returns an array of values
+  // so I chained .includes(value) to see if the resulting array contains the value
+  // and used a ternary to return true or false accordingly
+  return Object.values(obj).includes(value) ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-You are given an object with names and their coresponding phone numbers that looks like this:
+You are given an object with names and their corresponding phone numbers that looks like this:
 {
   'Grace Hopper': '222-303-5938',
   'Ada Lovelace': '222-349-9842',
