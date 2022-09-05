@@ -169,6 +169,18 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) =>
 {
   // Solution code here...
+
+  // empty object to store key value pairs
+  let hourlySalesObject = [];
+
+  // loop over hours array
+  hours.forEach((hour, idx) =>
+  {
+    // push an object with the sales data at this index and the time at this index to the array
+    hourlySalesObject.push({ sales: `${ data[idx] } cookies`, time: `${ hours[idx] }` });
+  });
+
+  return hourlySalesObject;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -195,6 +207,30 @@ const errands = [
 const howManyTreats = (arr) =>
 {
   // Solution code here...
+  // arr is an array of objects with store and items lists
+
+  // plan of attack:
+  // loop through arr and find the one where store: 'Pet store'
+  // in that object, look for the items[] array
+  // loop through the items array and look for the `treats` key
+  // get the value of the `quantity` key of `Treats`
+  // return the treats
+  let treats;
+
+  // loop through arr
+  arr.forEach(store =>
+  {
+    // if the store property of the current store matches the pet store
+    if (store.store === 'Pet store')
+    {
+      //console.log('found pet store');
+
+      // find the name of the object with the 'Treats' value and get the quantity associated with that object
+      treats = store.items.find(({ name }) => name === 'Treats').quantity;
+    }
+  });
+
+  return treats;
 };
 
 /* ------------------------------------------------------------------------------------------------
