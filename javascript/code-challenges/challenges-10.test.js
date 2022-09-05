@@ -33,6 +33,28 @@ return: 23
 const findMax = (matrix) =>
 {
   // Solution code here...
+
+  // return the highest positive number in the 2d array
+  // 1. make a placeholder
+  // 2. loop through array
+  // 3. loop through each inner array
+  // 4. if the current num is larger than the largest num, set it to that num
+  // 5. return the highest num
+
+  // set maxNum as the first index of the first array in the 2d array of numbers
+  let maxNum = matrix.length ? matrix[0][0] : 'sorry, we didn\'t find any numbers :/';
+
+  matrix.forEach(array => array.forEach(num =>
+  {
+    //console.log('num: ', num);
+    if (num > maxNum)
+    {
+      maxNum = num;
+      //console.log('maxNum: ', maxNum);
+    }
+  }));
+
+  return maxNum;
 };
 
 /* ------------------------------------------------------------------------------------------------
