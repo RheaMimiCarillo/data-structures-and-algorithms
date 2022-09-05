@@ -88,7 +88,7 @@ const updateNumbers = (obj) =>
   // use Object.keys(obj) to get an array of the keys in the object ['Grace Hopper'] etc
   // chain.map to loop through the names of the scientists and create a new array
   // in each loop, use string literal to create a string using the key, then `:` then the value of the array using the key
-  return Object.keys(obj).map(computerScientist => `${computerScientist}: ${obj[computerScientist]}`);
+  return Object.keys(obj).map(computerScientist => `${ computerScientist }: ${ obj[computerScientist] }`);
 };
 
 
@@ -169,6 +169,8 @@ hasChildrenValues(characters, 'Sansa') will return false
 const hasChildrenValues = (arr, character) =>
 {
   // Solution code here...
+
+  /* solution from class
   let kids = 0;
 
   // arr is an array of characters with `name` and possibly `children` properties
@@ -193,6 +195,39 @@ const hasChildrenValues = (arr, character) =>
   });
   // if kids has any value other than 0, return true, else, return false
   return kids ? true : false;
+  */
+
+  /* my attempt
+    1. loop through array
+    2. look for the Object with it's `name` property the same as the `character` argument
+    3. if the matching Object has a `children` property, return true, if no children property or children property is empty, return false
+  */
+  let flag = false;
+  console.log('character: ', character);
+  arr.forEach(person =>
+  {
+    /*
+    return Object.values(person)[0] === character && Object.keys(person).includes('children') ? true : false;
+    */
+
+    // if the person has the same name value as the character, set personIsCharacter to true
+    let personIsCharacter = Object.values(person)[0] === character ? true : false;
+    //console.log(`(${ person.name }) personIsCharacter: `, personIsCharacter);
+
+    // if the object contains the 'children' property
+    let hasChildrenProp = Object.keys(person).includes('children');
+
+    //console.log(`(${ person.name }) hasChildrenProp: `, hasChildrenProp);
+
+    // set the external flag to true if both are true
+    if (personIsCharacter && hasChildrenProp)
+    {
+      flag = true;
+    }
+  });
+
+  //console.log('flag: ', flag);
+  return flag;
 };
 
 /* ------------------------------------------------------------------------------------------------
