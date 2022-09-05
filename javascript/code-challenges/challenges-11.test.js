@@ -24,7 +24,7 @@ function transformToLis(obj)
   // get the the keys of the object
   // traverse through the array of keys
   // set each key and value into an <li>
-  return Object.keys(obj).map(key => `<li>${key}: ${obj[key]}</li>`);
+  return Object.keys(obj).map(key => `<li>${ key }: ${ obj[key] }</li>`);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +40,16 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 const count = (target, input) =>
 {
   // Solution code here...
+
+  // very convoluted way
+  // map the original array
+  // filter out the just the nums that equal the target in each array
+  // reduce/combine the arrays into just an array of the target
+  // get just the .length of the reduced array
+  let targets = input.map(array => array.filter(num => num === target)).reduce((a, b) => a.concat(b),[]).length;
+
+
+  return targets;
 };
 
 /* ------------------------------------------------------------------------------------------------
