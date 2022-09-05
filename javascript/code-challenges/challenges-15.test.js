@@ -10,9 +10,13 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 ------------------------------------------------------------------------------------------------ */
 
-const screenForNames = (arr) => {
+const screenForNames = (arr) =>
+{
   // Solution code here...
   // arr is an array of strings
+  // Solution code here...
+  let regex = /^((Mr)||(Mrs)|(Ms)|(Dr))\.\s[a-zA-Z]+/;
+  return arr.filter(str => regex.test(str));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,9 +27,16 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = (arr) => {
+const toTitleCase = (arr) =>
+{
   // Solution code here...
+  return arr.map(str =>
+  {
+    let firstLetter = str.charAt(0).toUpperCase();
+    return firstLetter + str.substr(1);
+  });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -98,8 +109,19 @@ let starWarsData = [{
   gender: 'n/a'
 }];
 
-let biggerThanLuke = (arr) => {
+let biggerThanLuke = (arr) =>
+{
   // Solution code here...
+  const luke = arr.find(char => char.name = 'Luke Skywalker');
+  return arr
+    .filter(char => parseInt(char.mass) > parseInt(luke.mass))
+    .reduce((str, currentChar, i, arr) =>
+    {
+      i === arr.length - 1
+        ? str += currentChar.name
+        : str += currentChar.name + ' - ';
+      return str;
+    }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,10 +138,25 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => {
+const sortBy = (property, arr) =>
+{
   // Solution code here...
+  return arr.sort((a, b) =>
+  {
+    const aVal = a[property];
+    const bVal = b[property];
+    if (aVal < bVal)
+    {
+      return -1;
+    } else if (aVal > bVal)
+    {
+      return 1;
+    } else
+    {
+      return 0;
+    }
+  });
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -132,8 +169,11 @@ http://www.insecure.com returns false because the URL is not secure
 https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
-const isSecure = (url) => {
+const isSecure = (url) =>
+{
   // Solution code here...
+  let regex = /^(https:\/\/)/;
+  return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,8 +195,25 @@ Here is a sample board:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const detectTicTacToeWin = (board) => {
+const detectTicTacToeWin = (board) =>
+{
   // Solution code here...
+  let helpCheck = (set) =>
+  {
+    return set.every(cell => cell !== '' && cell === set[0]) ? true : false;
+  };
+  if (helpCheck(board[0])) return true;
+  if (helpCheck(board[1])) return true;
+  if (helpCheck(board[2])) return true;
+
+  if (helpCheck([board[0][0], board[1][0], board[2][0]])) return true;
+  if (helpCheck([board[0][1], board[1][1], board[2][1]])) return true;
+  if (helpCheck([board[0][2], board[1][2], board[2][2]])) return true;
+
+  if (helpCheck([board[0][0], board[1][1], board[2][2]])) return true;
+  if (helpCheck([board[0][2], board[1][1], board[2][0]])) return true;
+
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -170,15 +227,19 @@ Run your tests from the console: jest challenge-14.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
-  test('It should return a list of names', () => {
+describe('Testing challenge 1', () =>
+{
+  test('It should return a list of names', () =>
+  {
     const names = ['Mr. Brown', ' Ms. Red', 'Dr. Blue', 'Mrs.', '', 'Ms. Black', 'dr. Green', 'Mrs. Orange', 'Purple', 'Mr.  Pink'];
     expect(screenForNames(names)).toStrictEqual(['Mr. Brown', 'Dr. Blue', 'Ms. Black', 'Mrs. Orange']);
   });
 });
 
-describe('Testing challenge 2', () => {
-  test('It should convert each word to title case', () => {
+describe('Testing challenge 2', () =>
+{
+  test('It should convert each word to title case', () =>
+  {
     const words = ['apple', 'banana', 'MacGyver'];
     expect(toTitleCase(words)).toStrictEqual(['Apple', 'Banana', 'MacGyver']);
 
@@ -186,15 +247,19 @@ describe('Testing challenge 2', () => {
   });
 });
 
-describe('Testing challenge 3', () => {
-  test('It should return only characters that are bigger than Luke', () => {
+describe('Testing challenge 3', () =>
+{
+  test('It should return only characters that are bigger than Luke', () =>
+  {
     expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
     expect(biggerThanLuke([])).toStrictEqual('');
   });
 });
 
-describe('Testing challenge 4', () => {
-  test('It should sort items by a price', () => {
+describe('Testing challenge 4', () =>
+{
+  test('It should sort items by a price', () =>
+  {
 
     expect(sortBy('price', [
       { name: 'Sweatshirt', price: 45 },
@@ -208,7 +273,8 @@ describe('Testing challenge 4', () => {
 
   });
 
-  test('It should sort items by name', () => {
+  test('It should sort items by name', () =>
+  {
 
     expect(sortBy('name', [
       { name: 'Sweatshirt', price: 45 },
@@ -222,8 +288,10 @@ describe('Testing challenge 4', () => {
   });
 });
 
-describe('Testing challenge 5', () => {
-  test('It should check if url is https', () => {
+describe('Testing challenge 5', () =>
+{
+  test('It should check if url is https', () =>
+  {
 
     expect(isSecure('http://www.insecure.com')).toBe(false);
     expect(isSecure('https://secure.com')).toBe(true);
@@ -231,17 +299,21 @@ describe('Testing challenge 5', () => {
   });
 });
 
-describe('Testing challenge 6', () => {
-  test('It should return true if there are three in a row', () => {
+describe('Testing challenge 6', () =>
+{
+  test('It should return true if there are three in a row', () =>
+  {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
   });
 
-  test('It should return false if there are not three in a row', () => {
+  test('It should return false if there are not three in a row', () =>
+  {
     expect(detectTicTacToeWin([['X', '', 'O'], ['O', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(false);
   });
 
-  test('It should not treat empty 3 in row as winner', () => {
+  test('It should not treat empty 3 in row as winner', () =>
+  {
     expect(detectTicTacToeWin([['', '', ''], ['O', 'O', ''], ['X', 'O', 'X']])).toEqual(false);
   });
 });
