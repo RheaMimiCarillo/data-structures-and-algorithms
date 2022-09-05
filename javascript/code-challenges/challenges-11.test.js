@@ -46,7 +46,7 @@ const count = (target, input) =>
   // filter out the just the nums that equal the target in each array
   // reduce/combine the arrays into just an array of the target
   // get just the .length of the reduced array
-  let targets = input.map(array => array.filter(num => num === target)).reduce((a, b) => a.concat(b),[]).length;
+  let targets = input.map(array => array.filter(num => num === target)).reduce((a, b) => a.concat(b), []).length;
 
 
   return targets;
@@ -65,6 +65,14 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 const totalSum = (input) =>
 {
   // Solution code here...
+  let total = 0;
+
+  // traverse each index
+  // then traverse each array
+  // then add the num to the total
+  input.forEach(array => array.forEach(num => total += num));
+
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +90,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 const divisibleByFiveTwoToThePower = (input) =>
 {
   // Solution code here...
+  return input.map(array => array.filter(element => typeof (element) === 'number' && (element % 5) === 0).map(num => Math.pow(2, num)));
 };
 
 /* ------------------------------------------------------------------------------------------------
