@@ -115,7 +115,45 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 const grandTotal = (stores) =>
 {
   // Solution code here...
+  // pat has data for hourly sales of salmon cookies
+  // he wants to see what the total hourly cookies sales are across all stores combined (in an array)
 
+  // stores is an array of arrays with cookie sales
+
+  // 1. make an hourlyTotals array [] that we'll push to
+  // 2. make a loop with idx
+  // 3. use stores.forEach(store => ) to target each store array
+  // 4. use store.forEach((salesFigure, idx) => to increment the hourlyTotals[idx] += the current salesFigure?
+
+  // initialize an empty array
+  let hourlyTotals = [];
+
+  // loop through each store in the array
+  stores.forEach(store =>
+  {
+    // log to see this store's values
+    // console.log('this store: ', store);
+
+    // loop through each cookie sales figure in each store
+    store.forEach((salesFigure, idx) =>
+    {
+      // if the index of hourlyTotals doesn't have an initial number value, set it to 0 (to avoid NaN)
+      if (!hourlyTotals[idx])
+      {
+        hourlyTotals[idx] = 0;
+      }
+      // log to see the current sales figure
+      // console.log(`salesFigure ${idx}: `, salesFigure);
+
+      // accumulate hourlyTotals at the current index by the sales figure
+      hourlyTotals[idx] += salesFigure;
+
+      // log to see the state of the array at his point of the loop
+      // console.log('hourlyTotals plus sales figure: ', hourlyTotals);
+    });
+  });
+
+  return hourlyTotals;
 };
 
 /* ------------------------------------------------------------------------------------------------
