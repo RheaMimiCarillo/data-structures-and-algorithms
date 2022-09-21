@@ -15,7 +15,7 @@ Worked with Jordan Yamada, Carlos Herrera, Jeffery Smith, Davia Tusia, and Alfre
 
 Worked with Jordan Yamada and Jeffery Smith on the code example
 
-https://replit.com/@CravenCat/401CC02#index.js
+[Implementation on repl.it](https://replit.com/@CravenCat/401CC02#index.js)
 
 ## Approach & Efficiency
 
