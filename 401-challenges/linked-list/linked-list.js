@@ -25,9 +25,46 @@ class LinkedList
   // else, return `false`
   includes(searchKey)
   {
+    // if there is no `head` on this linked list
+    if (this.head === null)
+    {
+      // return false, because there's nothing to search through
+      return false;
+    }
+    // there there is a 'head' node in this linked list
+    else
+    {
+      // designate current as the linked list's head
+      let current = this.head;
 
+      // flag to designate if the searchKey has been found
+      let found = false;
 
-    // returns boolean
+      // keep looping until we run out of `node`s to check, or if the searchKey is found
+      while (current !== null || !found)
+      {
+        // if the data of the current node matches the searchKey
+        // set `found` to `true`
+        // otherwise, go to the next node
+        /*
+        if (current.data === searchKey)
+        {
+          found = true;
+        }
+        else
+        {
+          current = current.next;
+        }
+        */
+
+        current.data === searchKey
+          ? found = true
+          : current = current.next;
+      }
+      // returns boolean
+      // will return
+      return found;
+    }
   }
 
   // this method returns a string to represent all values in a linked list
@@ -51,18 +88,27 @@ class LinkedList
     // if there is a head `Node` to point to
     else
     {
+      // start building first node from `head`
       let output = '{ ';
 
-      output += `${this.head.data} } -> `;
+      // fill output with data in `head`
+      output += `${ this.head.data } } -> `;
 
+      // specify the next node
       let current = this.head.next;
 
-      while(current !== null)
+      // whilst `current` isn't null
+      while (current !== null)
       {
-        output += ``
+        // add the brackets, `current` data, and arrow to the  `output` string
+        output += `{ ${ current.data } } -> `;
+        current = current.next;
       }
 
-      // returns string
+      // when we get here, current isn't a `Node`, it's `null, so we concatenate `NULL` to the end of `output`
+      output += 'NULL';
+
+      // returns `output`
       return output;
     }
   }
@@ -82,3 +128,10 @@ class Node
     this.next = next;
   }
 }
+
+
+let testNode = new Node('poop');
+
+let testList = new LinkedList(testNode);
+
+console.log(testList.toString());
