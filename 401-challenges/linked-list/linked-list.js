@@ -1,6 +1,5 @@
 'use strict';
 
-
 class LinkedList
 {
   // specify the default `head` of the linked list class will be `null` one isn't provided
@@ -14,9 +13,13 @@ class LinkedList
   // pass in a new `Node` we want to serve as the `head`
   // make the passed in node point to the current `head`
   // then make this linked list object point to the new `head`
-  insert(newHead)
+  insert(newHeadData)
   {
-    //
+    // set newHead.next as the value of this linked list's `head` node
+    let newHead = new Node(newHeadData, this.head);
+    this.head = newHead;
+    // set the `head` of this linked list as  newHead
+    // this.head = newHead;
     // returns nothing
   }
 
@@ -31,7 +34,6 @@ class LinkedList
       // return false, because there's nothing to search through
       return false;
     }
-    // there there is a 'head' node in this linked list
     else
     {
       // designate current as the linked list's head
@@ -39,12 +41,14 @@ class LinkedList
 
       // flag to designate if the searchKey has been found
       let found = false;
-
-      // keep looping until we run out of `node`s to check, or if the searchKey is found
-      while (current !== null || !found)
+      while (current !== null && !found)
       {
+        console.log('in loop');
+        console.log('current.data: ', current.data);
+        console.log('searchKey: ', searchKey);
+        console.log('found: ', found);
         // if the data of the current node matches the searchKey
-        // set `found` to `true`
+        // set `found` to true
         // otherwise, go to the next node
         /*
         if (current.data === searchKey)
@@ -56,7 +60,6 @@ class LinkedList
           current = current.next;
         }
         */
-
         current.data === searchKey
           ? found = true
           : current = current.next;
@@ -129,9 +132,24 @@ class Node
   }
 }
 
-
+// random tests
 let testNode = new Node('poop');
+let testNode2 = new Node('peep');
+testNode.next = testNode2;
+
+let testList2 = new LinkedList(new Node('meep', new Node('MEEP')));
 
 let testList = new LinkedList(testNode);
+
+console.log(testNode);
+
+console.log(testList.toString());
+
+// `includes()` test
+console.log(testList.includes('poop'));
+
+console.log(testList2.toString());
+
+testList.insert('new head');
 
 console.log(testList.toString());
