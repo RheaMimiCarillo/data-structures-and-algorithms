@@ -1,13 +1,13 @@
 # Linked List
 
-
 ## Problem Domain
-<!-- Description of the challenge -->
+
+Create Node and LinkedList classes to for singly linked lists
 
 ## Whiteboard Process
-<!-- Embedded whiteboard image -->
 
-![Linked List Whiteboard](./linked-list.PNG "Linked List Whiteboard")
+![Singly Linked List Whiteboard](./05.png "Singly Linked List Whiteboard")
 
 ## Approach & Efficiency
-<!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+
+I took the approach to implement my methods with basic `for` and `while` loops to make my classes and functions accessible for humans to understand. I'd go back later, then optimize for efficiency.
