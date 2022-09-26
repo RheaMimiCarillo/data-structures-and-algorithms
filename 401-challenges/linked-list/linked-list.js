@@ -11,13 +11,19 @@ class LinkedList
   }
 
   // this method adds a new node at the `head` of the linked list with O(1) Time performance
-  insert(value)
+  // pass in a new `Node` we want to serve as the `head`
+  // make the passed in node point to the current `head`
+  // then make this linked list object point to the new `head`
+  insert(newHead)
   {
-
+    //
     // returns nothing
   }
 
-  includes(value)
+  // traverse the linked list to look if this linked list includes the specified `searchKey`
+  // if the list does, return `true`
+  // else, return `false`
+  includes(searchKey)
   {
 
 
@@ -26,11 +32,39 @@ class LinkedList
 
   // this method returns a string to represent all values in a linked list
   // ex: "{ a } -> { b } -> { c } -> NULL"
+  // build a string
+  // steps:
+  // - check if the LinkedList has any nodes
+  // if so, start with `{ ` and go from there
+  // next would be the `<value-of-the-'head'> } -> ``
+  // then check if the head's `next` property isn't null
+  // if so, rinse and repeat
+  // until we point to 'NULL'
+  // then return the final string
   toString()
   {
+    // if there is no head `Node` to point to
+    if (this.head === null)
+    {
+      return '{}';
+    }
+    // if there is a head `Node` to point to
+    else
+    {
+      let output = '{ ';
 
-    // returns string
-    return '';
+      output += `${this.head.data} } -> `;
+
+      let current = this.head.next;
+
+      while(current !== null)
+      {
+        output += ``
+      }
+
+      // returns string
+      return output;
+    }
   }
 }
 
@@ -39,9 +73,12 @@ class Node
 {
   // value is the data of the Node and 'next' points at the next Node object in this linked list
   // `next` is null if not provided
-  constructor(value, next = null)
+  constructor(data, next = null)
   {
-    this.value = value;
+    // data of this Node
+    this.data = data;
+
+    // pointer to the next `Node` object in the linked list
     this.next = next;
   }
 }
