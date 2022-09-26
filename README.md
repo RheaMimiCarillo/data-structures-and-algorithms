@@ -24,5 +24,6 @@ To run your tests
 
 #### 401 Table of Contents
 
-[array-reverse](./401-challenges/array-reverse/README.md)
-[array-insert-shift](./401-challenges/array-insert-shift/README.md)
+- [array-reverse](./401-challenges/array-reverse/README.md)
+- [array-insert-shift](./401-challenges/array-insert-shift/README.md)
+- [linked-list](./401-challenges/linked-list/README.md)
