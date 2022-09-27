@@ -22,8 +22,9 @@ Write the following methods for the Linked List class:
 
 ## Whiteboard Process
 
-![Singly Linked List Whiteboard](./05.png "Singly Linked List Whiteboard")
-![Linked List Insertions](./06.jpg "Linked List Insertions")
+![Singly Linked List Whiteboard](./images/05.png "Singly Linked List Whiteboard")
+![Linked List Insertions](./images/06.jpg "Linked List Insertions")
+![Kth from the end](./images/07.jpg "")
 
 ## Approach & Efficiency
 
