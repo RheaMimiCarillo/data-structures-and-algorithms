@@ -151,6 +151,42 @@ class LinkedList
     head -> {1} -> {2} -> {2} -> X	2, 5	head -> {1} -> {2} -> {5} -> {2} -> X
     head -> {1} -> {3} -> {2} -> X	4, 5	No change, method exception
   */
+
+  // accepts 1 parameter: an integer, `k` as a parameter
+  // this method returns the value that is `k` places from the `tail` of the linked list
+  // in other words, counting backwards from the tail, what's the value that is `k` counts from the back of the linked list
+
+  /*ll.kthFromEnd(k)
+    Input `ll`	                              Arg `k`	Output
+    head -> {1} -> {3} -> {8} -> {2} -> X	   0	     2
+
+    head -> {1} -> {3} -> {8} -> {2} -> X	   2	     3
+
+    head -> {1} -> {3} -> {8} -> {2} -> X	   6    Exception
+  */
+  // strategy:
+  // traverse a list (current)
+  // whilst traversing, start another traversal that is `k` places behind and offset of `current` (make a counter variable)
+  // when current.next points to a null value, stop the traversal from both `current` and the `offset`
+  // get the value (.data) of the `offset` node and return it
+
+  /* edge cases/tests:
+    1. K is greater than the length of the linked list
+      - throw an exception
+    2. k and the length of the list are the same
+      - return an exception, because there's isn't any node to point to
+    3. k is not a positive value
+      - return an exception, since there isn't anything to point to
+      - for example, if the list's size is 4, and we need to look 4 places behind the `tail`, we'll go 3, 2, 1, 0, but there isn't `0` node to point to
+    4. the linked list is the size of 1
+      - if `k` is 0, then return the head
+      - otherwise, return an exception, since there aren't any previous nodes to point to
+    5. 'Happy Path' - `k` is somewhere in the middle of the list
+  */
+  kthFromEnd()
+  {
+
+  }
 }
 
 // Node class for use with singly linked lists
@@ -167,6 +203,11 @@ class Node
     this.next = next;
   }
 }
+
+module.exports = {
+  LinkedList,
+  Node
+};
 
 // random tests
 let testNode = new Node('poop');
