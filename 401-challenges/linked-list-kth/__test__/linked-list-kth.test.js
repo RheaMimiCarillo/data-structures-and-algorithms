@@ -3,7 +3,7 @@
 // import the LinkedList file
 const LinkedList = require('../linked-list.js');
 
-describe('poopoopeepee', =>
+describe('meep', =>
   {
     it('should pass', =>
       {
