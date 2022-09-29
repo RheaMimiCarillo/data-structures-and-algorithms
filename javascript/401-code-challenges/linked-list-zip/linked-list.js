@@ -221,11 +221,13 @@ class Node
     // pointer to the next `Node` object in the linked list
     this.next = next;
   }
+  /*
   toString()
   {
     // wrote this to test for reference errors
     return `[${ this.data }]`;
   }
+  */
 }
 
 // export the LinkedList class and the

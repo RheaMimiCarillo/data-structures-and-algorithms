@@ -39,6 +39,8 @@ I took the approach to limit the function to only a single loop, for time and sp
 
 ## Solution
 
+Worked with Jordan Yamada, Alfredo Ortiz, Amy Pierce, and Jeffery Smith on this solution
+
 | `Arg list1`      | `Arg list2` | `Output`      |
 | ----------- | ----------- | ----------- |
 | {1} -> {3} -> {2} -> null      | {5} -> {9} -> {4} -> null       | {1} -> {5} -> {3} -> {9} -> {2} -> {4} -> null      |
