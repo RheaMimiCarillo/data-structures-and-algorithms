@@ -1,5 +1,6 @@
 'use strict';
 
+// import the `Node` class from the linked list class
 const { Node } = require('./linked-list.js');
 
 class Stack
@@ -19,11 +20,11 @@ class Stack
     // if this stack has a top node already
     if (this.top)
     {
-      // make the current top node.next point to the newTop node
-      this.top.next = newTop;
+      // newTop node point to the current top node
+      newTop.next = this.top;
     }
 
-    // set the `top` of this Stack to point to the new top Node
+    // set the `top` of this Stack to point to the new Node
     this.top = newTop;
   }
 
@@ -83,13 +84,13 @@ class Stack
     // if there is no head `Node` to point to
     if (this.top === null)
     {
-      return `HEAD\n↓{}`;
+      return `\nHEAD\n↓{}`;
     }
     // if there is a head `Node` to point to
     else
     {
       // start building first node from `head`
-      let output = 'HEAD\n↓\n{ ';
+      let output = '\nHEAD\n↓\n{ ';
 
       // fill output with data in `head`
       output += `${ this.top.data } }\n↓`;
@@ -101,8 +102,8 @@ class Stack
       while (current !== null)
       {
         // add the brackets, `current` data, and arrow to the  `output` string
-        output += `{ ${ current.top } }\n↓`;
-        current = current.top;
+        output += `\n{ ${ current.data } }\n↓`;
+        current = current.next;
       }
 
       // when we get here, current isn't a `Node`, it's `null, so we concatenate `NULL` to the end of `output`
