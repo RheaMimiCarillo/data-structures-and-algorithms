@@ -39,7 +39,7 @@ class Stack
       let temp = this.top;
 
       // set the `top` property of this stack to be the next node down the stack
-      this.top = top.next;
+      this.top = this.top.next;
 
       // break the reference to the previous top node by setting its .next to `null`
       temp.next = null;
