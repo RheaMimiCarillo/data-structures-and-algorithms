@@ -33,7 +33,7 @@ class Stack
   pop()
   {
     // attempt to pop top node
-    try
+    if (!this.isEmpty())
     {
       // make a temp value that points to the current top (two things are pointing to the node that's a the top, now)
       let temp = this.top;
@@ -48,9 +48,9 @@ class Stack
       return temp.data;
     }
     // if no top node to pop, return an error
-    catch (error)
+    else
     {
-      return error;
+      return 'error popping empty Stack';
     }
   }
 
@@ -59,14 +59,14 @@ class Stack
   peek()
   {
     // try to return the value of the `top` node
-    try
+    if (!this.isEmpty())
     {
       return this.top.data;
     }
     // if empty, or top node has no value, return an error
-    catch (error)
+    else
     {
-      return error;
+      return 'error peeking empty Stack';
     }
   }
 
@@ -74,25 +74,26 @@ class Stack
   // accepts no parameters
   isEmpty()
   {
-    // if this.top is truthy, return true, otherwise, return false
-    return this.top ? true : false;
+    // if this stack has no nodes, then return true (the stack is empty)
+    // otherwise, return false (this stack is NOT empty)
+    return this.top ? false : true;
   }
 
   // this method prints the stack class and nodes in a vertical format:
   toString()
   {
-    // if there is no head `Node` to point to
-    if (this.top === null)
+    // if there is no top `Node` to point to
+    if (this.isEmpty())
     {
       return `\nHEAD\n↓{}`;
     }
-    // if there is a head `Node` to point to
+    // if there is a top `Node` to point to
     else
     {
-      // start building first node from `head`
+      // start building first node from `top`
       let output = '\nHEAD\n↓\n{ ';
 
-      // fill output with data in `head`
+      // fill output with data in `top`
       output += `${ this.top.data } }\n↓`;
 
       // specify the next node

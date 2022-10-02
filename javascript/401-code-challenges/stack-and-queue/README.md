@@ -18,7 +18,7 @@ Using a `Linked List` as the underlying data storage mechanism, implement both a
 
 Create a `Node` class that has properties for the value stored in the `Node`, and a pointer to the next `node`.
 
-#### Stack
+#### Stack class
 
 - The class should contain the following methods:
 
@@ -41,7 +41,7 @@ Create a `Node` class that has properties for the value stored in the `Node`, an
     - Arguments: none
     - Returns: `Boolean` indicating whether or not the stack is empty.
 
-#### Queue
+#### Queue class
 
 - Create a `Queue` class that has a `front` property. It creates an empty `Queue` when instantiated.
 
@@ -71,7 +71,9 @@ Create a `Node` class that has properties for the value stored in the `Node`, an
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 ### Whiteboard
+
 Credit to Jacob Knaack, Jordan Yamada, and Alfredo Ortiz for contributing to this whiteboard
+
 #### Stack
 
 - ![Stack](./images/stack.png "Stack")
@@ -87,6 +89,3 @@ Credit to Jacob Knaack, Jordan Yamada, and Alfredo Ortiz for contributing to thi
 #### Enqueue and dequeue
 
 - ![Enqueue and dequeue](./images/enqueue-dequeue.png "Enqueue and dequeue")
-
-## API
-<!-- Description of each method publicly available to your Stack and Queue-->
