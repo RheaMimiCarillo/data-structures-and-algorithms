@@ -1,15 +1,32 @@
 # Stack Queue Pseudo
 
+First-in, First out Animal Shelter.
+
 ## Challenge
 
-Implement a pseudo-queue class that utilized two Stack class objects and Stack class methods to do FiFo enqueues and dequeues
+Create a class called AnimalShelter which holds only dogs and cats.
+The shelter operates using a first-in, first-out approach.
+
+Implement the following methods:
+
+**enqueue**
+- Arguments: `animal`
+- animal can be either a dog or a cat object.
+
+**dequeue**
+- Arguments: `pref`
+- pref can be either `"dog"` or `"cat"`
+- Return: either a dog or a cat, based on preference.
+- If `pref` is not `"dog"` or `"cat"` then return `null`.
 
 ## Approach & Efficiency
 
-I'm going to implement two Stacks in the constructor of the pseudo-queue and shuffle nodes from one Stack to the other Stack to do enqueues and dequeues. The efficiency is pretty bad.
+Since we're using FiFo, my initial thoughts are to construct a queue and stack in the constructor.
+
+I'll look through the data structures for nodes with 'cat' and 'dog' data values and return the first one I find.
+I'll move the cat and dog nodes between the two data structures, so that the data is ready for the next call.
 
 ## Whiteboard
 
-![Pseudo-Queue Enqueue UML](./images/enqueue.png "Pseudo-Queue Enqueue UML")
+![stack-queue-animal-shelter UML](./images/stack-queue-animal-shelter.png "stack-queue-animal-shelter UML")
 
-![Pseudo-Queue Enqueue UML](./images/dequeue.png "Pseudo-Queue Dequeue UML")
