@@ -11,9 +11,11 @@ class AnimalShelter
 {
   constructor()
   {
-    // these two stacks hold the nodes
+    // these two structures hold the nodes
     // only have access to push, pop, and peek
     this.stack = new Stack();
+
+    // access to enqueue and dequeue
     this.queue = new Queue();
   }
 
