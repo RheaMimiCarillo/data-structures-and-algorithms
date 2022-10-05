@@ -13,8 +13,8 @@ class PseudoQueue
   {
     // these two stacks hold the nodes
     // only have access to push, pop, and peek
-    this.stack1 = new Stack();
-    this.stack2 = new Stack();
+    this.back = new Stack();
+    this.front = new Stack();
   }
 
   // enqueue
@@ -23,7 +23,7 @@ class PseudoQueue
 
 
   // dequeue
-  // accepts no arguments
+  // accepts no arguments∏
   // this methods extracts the front `data` from the PseudoQueue using FiFo
 }
 

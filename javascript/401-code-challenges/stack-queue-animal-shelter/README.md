@@ -29,4 +29,3 @@ I'll move the cat and dog nodes between the two data structures, so that the dat
 ## Whiteboard
 
 ![stack-queue-animal-shelter UML](./images/stack-queue-animal-shelter.png "stack-queue-animal-shelter UML")
-
