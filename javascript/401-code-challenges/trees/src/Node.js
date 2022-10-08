@@ -24,4 +24,4 @@ class Knode {
 module.exports = {
   Node,
   Knode
-}
+};
