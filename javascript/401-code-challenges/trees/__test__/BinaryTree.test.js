@@ -24,11 +24,17 @@ describe('Testing tree data structures', () =>
 
   test('For a Binary Search Tree, can successfully add a left child and right child properly to a node', () =>
   {
-    let testBinaryTree = new BinarySearchTree();
+    let testBinarySearchTree = new BinarySearchTree();
 
-    let root = new Node(10);
+    testBinarySearchTree.add(10);
+    testBinarySearchTree.add(1);
+    testBinarySearchTree.add(100);
+    testBinarySearchTree.add(9001);
+    testBinarySearchTree.add(4);
 
-    testBinaryTree.root = root;
+    let result = testBinarySearchTree.inOrder();
+
+    console.log(result);
   });
 
   test('Can successfully return a collection from a pre-order traversal', () =>
