@@ -78,7 +78,6 @@ class BinaryTree
       {
         let front = breadthQueue.dequeue();
         breadthArr.push(front.data);
-        console.log(front.data);
 
         if (front.left !== null)
         {

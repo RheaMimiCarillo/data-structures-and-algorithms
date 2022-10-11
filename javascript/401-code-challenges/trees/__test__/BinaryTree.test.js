@@ -16,18 +16,7 @@ describe('Testing tree data structures', () =>
   {
     let testTree = new BinaryTree();
     let root = new Node(10);
-    root.left = new Node(1);
-    root.right = new Node(50);
-    root.left.left = new Node(1000);
     testTree.root = root;
-
-    console.log('pre-order:', testTree.preOrder());
-
-    console.log('in-order: ', testTree.inOrder());
-
-    console.log('post-order: ', testTree.postOrder());
-
-    console.log('breadth first: ', testTree.breadthFirst());
 
     expect(testTree.root.data).toEqual(10);
   });
@@ -44,21 +33,66 @@ describe('Testing tree data structures', () =>
 
   test('Can successfully return a collection from a pre-order traversal', () =>
   {
+    let testTree = new BinaryTree();
+    let root = new Node(10);
+    root.left = new Node(1);
+    root.right = new Node(50);
+    root.left.left = new Node(1000);
+    testTree.root = root;
 
+    //console.log('pre-order:', testTree.preOrder());
+
+    let preOrderResult = testTree.preOrder();
+    expect(preOrderResult).toEqual([ 10, 1, 1000, 50 ]);
   });
 
   test('Can successfully return a collection from an in-order traversal', () =>
   {
+    let testTree = new BinaryTree();
+    let root = new Node(10);
+    root.left = new Node(1);
+    root.right = new Node(50);
+    root.left.left = new Node(1000);
+    testTree.root = root;
 
+    //console.log('in-order: ', testTree.inOrder());
+    let inOrderResult = testTree.inOrder();
+    expect(inOrderResult).toEqual([ 1000, 1, 10, 50 ]);
   });
 
   test('Can successfully return a collection from a post-order traversal', () =>
   {
+    let testTree = new BinaryTree();
+    let root = new Node(10);
+    root.left = new Node(1);
+    root.right = new Node(50);
+    root.left.left = new Node(1000);
+    testTree.root = root;
 
+    //console.log('post-order: ', testTree.postOrder());
+    let postOrderResult = testTree.postOrder();
+
+    expect(postOrderResult).toEqual([ 1000, 1, 50, 10 ]);
   });
 
   test('Returns true|false for the contains method, given an existing or non-existing node value', () =>
   {
 
   });
+
+  test('Can successfully return a collection from a breadth-first traversal', () =>
+  {
+    let testTree = new BinaryTree();
+    let root = new Node(10);
+    root.left = new Node(1);
+    root.right = new Node(50);
+    root.left.left = new Node(1000);
+    testTree.root = root;
+
+    // console.log('breadthFirst: ', testTree.breadthFirst());
+    let breadthFirstResult = testTree.breadthFirst();
+
+    expect(breadthFirstResult).toEqual([ 10, 1, 50, 1000 ]);
+  });
+
 });
