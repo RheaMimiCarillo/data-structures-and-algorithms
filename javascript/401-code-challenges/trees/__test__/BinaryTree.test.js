@@ -88,17 +88,19 @@ describe('Testing tree data structures', () =>
 
   test('Can successfully return a collection from a breadth-first traversal', () =>
   {
-    let testTree = new BinaryTree();
-    let root = new Node(10);
-    root.left = new Node(1);
-    root.right = new Node(50);
-    root.left.left = new Node(1000);
-    testTree.root = root;
+    let testBinarySearchTree = new BinarySearchTree();
+
+    testBinarySearchTree.add(10);
+    testBinarySearchTree.add(1);
+    testBinarySearchTree.add(100);
+    testBinarySearchTree.add(9001);
+    testBinarySearchTree.add(4);
 
     // console.log('breadthFirst: ', testTree.breadthFirst());
-    let breadthFirstResult = testTree.breadthFirst();
+    let breadthFirstResult = testBinarySearchTree.breadthFirst();
+    console.log(breadthFirstResult);
 
-    expect(breadthFirstResult).toEqual([ 10, 1, 50, 1000 ]);
+    expect(breadthFirstResult).toEqual([ ]);
   });
 
 });

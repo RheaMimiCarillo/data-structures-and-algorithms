@@ -15,23 +15,31 @@ class BinarySearchTree extends BinaryTree
   }
 
   // adds a new node in the correct position for a binary search tree
-  add(data, root = this.root)
+  add(data)
   {
+    this.root = this.addHelper(data, this.root);
+  }
+
+  addHelper(data, root)
+  {
+    console.log('root, before add(): ', root);
     if (root === null)
     {
       root = new Node(data);
     }
 
-    else if (data <= this.root.data)
+    else if (data <= root.data)
     {
-      root.left = this.add(data, root.left);
+      root.left = this.addHelper(data, root.left);
     }
 
     else
     {
-      root.right = this.add(data, root.right);
+      root.right = this.addHelper(data, root.right);
     }
+    console.log('root, after add(): ', this.root);
   }
+
 
   // returns a boolean whether or not a value is contained within the this tree at least once
   contains(data)

@@ -66,12 +66,10 @@ class BinaryTree
     return postOrderArr;
   }
 
-  breadthFirst(root = this.root)
+  breadthFirst(root = this.root, breadthArr = [], breadthQueue = new Queue())
   {
     if (root !== null)
     {
-      let breadthQueue = new Queue();
-      let breadthArr = [];
       breadthQueue.enqueue(root);
 
       while (!breadthQueue.isEmpty())
@@ -89,8 +87,8 @@ class BinaryTree
           breadthQueue.enqueue(front.right);
         }
       }
-      return breadthArr;
     }
+    return breadthArr;
   }
 }
 
