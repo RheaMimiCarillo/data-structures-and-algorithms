@@ -18,6 +18,7 @@ describe('Testing tree data structures', () =>
     let root = new Node(10);
     root.left = new Node(1);
     root.right = new Node(50);
+    root.left.left = new Node(1000);
     testTree.root = root;
 
     console.log('pre-order:', testTree.preOrder());
@@ -25,6 +26,8 @@ describe('Testing tree data structures', () =>
     console.log('in-order: ', testTree.inOrder());
 
     console.log('post-order: ', testTree.postOrder());
+
+    console.log('breadth first: ', testTree.breadthFirst());
 
     expect(testTree.root.data).toEqual(10);
   });

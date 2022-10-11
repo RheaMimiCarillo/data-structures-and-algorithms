@@ -2,6 +2,7 @@
 
 // import Node class
 const { Node, Knode } = require('./Node.js');
+const Queue = require('./queue');
 
 class BinaryTree
 {
@@ -10,73 +11,87 @@ class BinaryTree
     this.root = null;
   }
 
-  preOrder(root = this.root)
+  preOrder(root = this.root, preOrderArr = [])
   {
-    let preOrderArr = [];
     if (root !== null)
     {
       preOrderArr.push(root.data);
-      console.log(root.data);
-      if (root.left !== null)
+      if (root.left)
       {
-        this.preOrder(root.left);
-        preOrderArr.push(root.left.data);
+        this.preOrder(root.left, preOrderArr);
       }
 
-      if (root.right !== null)
+      if (root.right)
       {
-        this.preOrder(root.right);
-        preOrderArr.push(root.right.data);
+        this.preOrder(root.right, preOrderArr);
       }
 
     }
     return preOrderArr;
   }
 
-  inOrder(root = this.root)
+
+  inOrder(root = this.root, inOrderArr = [])
   {
-    let inOrderArr = [];
     if (root !== null)
     {
       if (root.left !== null)
       {
-        this.inOrder(root.left);
-        inOrderArr.push(root.left.data);
+        this.inOrder(root.left, inOrderArr);
       }
-
-      console.log(root.data);
       inOrderArr.push(root.data);
-
-
       if (root.right !== null)
       {
-        this.inOrder(root.right);
-        inOrderArr.push(root.right.data);
+        this.inOrder(root.right, inOrderArr);
       }
     }
     return inOrderArr;
   }
 
-  postOrder(root = this.root)
+  postOrder(root = this.root, postOrderArr = [])
   {
-    let postOrderArr = [];
     if (root !== null)
     {
       if (root.left !== null)
       {
-        this.postOrder(root.left);
-        postOrderArr.push(root.left.data);
+        this.postOrder(root.left, postOrderArr);
       }
 
       if (root.right !== null)
       {
-        this.inOrder(root.right);
-        postOrderArr.push(root.right.data);
+        this.inOrder(root.right, postOrderArr);
       }
-      console.log(root.data);
       postOrderArr.push(root.data);
     }
     return postOrderArr;
+  }
+
+  breadthFirst(root = this.root)
+  {
+    if (root !== null)
+    {
+      let breadthQueue = new Queue();
+      let breadthArr = [];
+      breadthQueue.enqueue(root);
+
+      while (!breadthQueue.isEmpty())
+      {
+        let front = breadthQueue.dequeue();
+        breadthArr.push(front.data);
+        console.log(front.data);
+
+        if (front.left !== null)
+        {
+          breadthQueue.enqueue(front.left);
+        }
+
+        if (front.right !== null)
+        {
+          breadthQueue.enqueue(front.right);
+        }
+      }
+      return breadthArr;
+    }
   }
 }
 

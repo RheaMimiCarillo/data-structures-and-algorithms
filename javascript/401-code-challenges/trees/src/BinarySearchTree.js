@@ -4,6 +4,7 @@
 const BinaryTree = require('./BinaryTree');
 // import Node class
 const Node = require('./Node');
+const Queue = require('./queue');
 
 class BinarySearchTree extends BinaryTree
 {
@@ -13,12 +14,14 @@ class BinarySearchTree extends BinaryTree
     super();
   }
 
-  add()
+  // adds a new node in the correct position for a binary search tree
+  add(data)
   {
 
   }
 
-  contains()
+  // returns a boolean whether or not a value is contained within the this tree at least once
+  contains(data)
   {
 
   }
