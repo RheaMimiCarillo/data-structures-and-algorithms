@@ -25,16 +25,17 @@ describe('Testing tree data structures', () =>
   test('For a Binary Search Tree, can successfully add a left child and right child properly to a node', () =>
   {
     let testBinarySearchTree = new BinarySearchTree();
-
     testBinarySearchTree.add(10);
+    console.log('BST after adding 10: ', testBinarySearchTree.preOrder());
     testBinarySearchTree.add(1);
+    console.log('BST after adding 1: ', testBinarySearchTree.preOrder());
+
     testBinarySearchTree.add(100);
     testBinarySearchTree.add(9001);
     testBinarySearchTree.add(4);
+    console.log('BST after adding everything: ', testBinarySearchTree.preOrder());
 
     let result = testBinarySearchTree.inOrder();
-
-    console.log(result);
   });
 
   test('Can successfully return a collection from a pre-order traversal', () =>
@@ -46,7 +47,7 @@ describe('Testing tree data structures', () =>
     root.left.left = new Node(1000);
     testTree.root = root;
 
-    //console.log('pre-order:', testTree.preOrder());
+    // console.log('pre-order:', testTree.preOrder());
 
     let preOrderResult = testTree.preOrder();
     expect(preOrderResult).toEqual([ 10, 1, 1000, 50 ]);
@@ -83,7 +84,7 @@ describe('Testing tree data structures', () =>
 
   test('Returns true|false for the contains method, given an existing or non-existing node value', () =>
   {
-
+    let testBinarySearchTree = new BinarySearchTree();
   });
 
   test('Can successfully return a collection from a breadth-first traversal', () =>
@@ -96,11 +97,10 @@ describe('Testing tree data structures', () =>
     testBinarySearchTree.add(9001);
     testBinarySearchTree.add(4);
 
-    // console.log('breadthFirst: ', testTree.breadthFirst());
+    //console.log('breadthFirst: ', testBinarySearchTree.breadthFirst());
     let breadthFirstResult = testBinarySearchTree.breadthFirst();
-    console.log(breadthFirstResult);
+    //console.log(breadthFirstResult);
 
-    expect(breadthFirstResult).toEqual([ ]);
   });
 
 });
