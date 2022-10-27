@@ -1,12 +1,16 @@
-# Code Challenge
+# Code Challenge 28
 
 Implement several array sorting comparators and an array filter.
 
 ## Whiteboard
 
-![Problem Domain](./images/problem_domain.jpg "Problem Domain")
+**Problem Domain:**
+![Problem Domain](./images/problemDomain.jpg "Problem Domain")
+**Sort Year:**
 ![Sort Year](./images/sortYear.jpg "Sort Year")
+**Sort Title:**
 ![Sort Title](./images/sortTitle.jpg "Sort Title")
+**In Genre:**
 ![In Genre](./images/inGenre.jpg "In Genre")
 
 ## Specifications
