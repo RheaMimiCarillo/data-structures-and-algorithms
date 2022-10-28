@@ -2,10 +2,12 @@
 <!-- Short summary or background information -->
 
 ## Challenge
-<!-- Description of the challenge -->
+
+Implement a Hashtable Class with the methods listed in the 'API' section.
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+I'm going to approach this challenge utilizing the 'Single-responsibility principle'. Any methods I write will be clean, reusable, and elegant.
 
 ## API
 
@@ -31,3 +33,15 @@ Implementation of a Hashtable Class with the following methods:
 - `hash`
   - Arguments: `key`
   - Returns: Index in the collection for that `key`
+
+## Testing
+
+My test suite will cover these cases:
+
+1. Setting a key/value to your hashtable results in the value being in the data structure
+2. Retrieving based on a key returns the value stored
+3. Successfully returns null for a key that does not exist in the hashtable
+4. Successfully returns a list of all unique keys that exist in the hashtable
+5. Successfully handle a collision within the hashtable
+6. Successfully retrieve a value from a bucket within the hashtable that has a collision
+7. Successfully hash a key to an in-range value
