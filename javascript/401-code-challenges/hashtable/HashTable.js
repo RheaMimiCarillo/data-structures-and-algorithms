@@ -16,7 +16,17 @@ class HashTable
    */
   hash(key)
   {
-
+    let charSum = 0;
+    for (let char in key)
+    {
+      // take sum of character codes in `key
+      charSum += key.charCodeAt(char);
+    }
+    // return the charSum, multiplied by a large prime number (599)
+    // then dividing by the number of buckets in this table
+    // and finally returning the remainder
+    // the idea is that the remainder will never be more than the amount of buckets/size in the table
+    return (charSum * 599) % this.size;
   }
 
   /**

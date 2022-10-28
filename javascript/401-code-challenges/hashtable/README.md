@@ -1,5 +1,8 @@
 # Hashtables
-<!-- Short summary or background information -->
+
+HashTable class for strings in JavaScript.
+
+A hash table is a data structure designed to improve the efficiency of storing and retrieving data.
 
 ## Challenge
 
@@ -8,6 +11,10 @@ Implement a Hashtable Class with the methods listed in the 'API' section.
 ## Approach & Efficiency
 
 I'm going to approach this challenge utilizing the 'Single-responsibility principle'. Any methods I write will be clean, reusable, and elegant.
+
+Our hashing algorithm will take the sum of each character in a string and take into account the total number of buckets available to calculate a reliably replicable key.
+
+Each bucket in our table will be a linked-list with node objects. Each node's data value will hold the key and value for the data we're storing.
 
 ## API
 
