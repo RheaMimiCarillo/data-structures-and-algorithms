@@ -4,6 +4,7 @@ const HashTable = require('../HashTable');
 
 describe('Testing the Hash Table class', () => {
 
+  // .skip literally just skips this test when running a test
   test.skip('Setting a key/value to your hashtable results in the value being in the data structure', () => {
 
   });

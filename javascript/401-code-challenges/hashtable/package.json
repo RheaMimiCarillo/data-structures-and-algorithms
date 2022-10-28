@@ -1,5 +1,5 @@
 {
-  "name": "hash-table-implementation",
+  "name": "hashtable",
   "version": "1.0.0",
   "description": "",
   "main": "HashTable.js",

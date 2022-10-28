@@ -16,6 +16,8 @@ Our hashing algorithm will take the sum of each character in a string and take i
 
 Each bucket in our table will be a linked-list with node objects. Each node's data value will hold the key and value for the data we're storing.
 
+In our JavaScript implementation, our HashTable will be an Array of LinkedLists.
+
 ## API
 
 Implementation of a Hashtable Class with the following methods:
@@ -25,6 +27,7 @@ Implementation of a Hashtable Class with the following methods:
   - Returns: nothing
   - This method should hash the `key`, and set the `key` and value pair in the table, handling collisions as needed.
   - Should a given `key` already exist, replace its value from the `value` argument given to this method.
+  - `set` data ends up at a stringified key:value pair
 
 - `get`
   - Arguments: `key`

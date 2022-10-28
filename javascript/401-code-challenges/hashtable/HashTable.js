@@ -33,6 +33,7 @@ class HashTable
    * places a value into our Hash Table by hashing our key, and setting our value into that Bucket of the table.
    * @param {String} key
    * @param {Any} value
+   * should not store a duplicate key:value pair if already in table (so check)
    */
   set(key, value)
   {
@@ -42,7 +43,7 @@ class HashTable
   /**
    * returns the value stored in the bucket associated with the key parameter.
    * @param {String} key
-   * @return {any}
+   * @return {any}, or {null} if no results
    */
   get(key)
   {
@@ -53,6 +54,7 @@ class HashTable
    * Returns a Boolean, indication if the kye exists in the table.
    * @param (String) key
    * @return {Boolean}
+   * does a key already exist in the hash table
    */
   has(key)
   {
@@ -62,6 +64,7 @@ class HashTable
   /**
    * Returns a collection of Keys
    * @return {Array}
+   * What are all of the keys in the hash table?
    */
   keys()
   {
