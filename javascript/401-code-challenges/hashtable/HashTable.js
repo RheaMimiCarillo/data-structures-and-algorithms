@@ -105,18 +105,32 @@ class HashTable
     // hash the provided key (and use modulus to find the array-index/bucket containing that key)
     // then traverse the in that bucket/linked-list for any string that matches the 'key'
     // what to do if there are multiple things to store with same key?
-    // and then with retrieval?
+    // and then with retrieval? should I return an array of results for duplicate keys?
 
     let indexOfBucket = this.hash(key);
     let result = null;
 
+    // if the bucket isn't null, then it's a LinkedList
     if (this.table[ indexOfBucket ])
     {
+      // wasn't sure how to get .find working without changing the LinkedList's methods
       //result = this.table[ indexOfBucket ].find(key);
-      result = this.table[ indexOfBucket ].head;
-      console.log('bucket found, result is: ', result);
-    }
 
+      // get an array of the values in the bucket
+      let pairs = this.table[ indexOfBucket ].values();
+
+      // for each value pair in the bucket
+      pairs.forEach(pair =>
+      {
+        //console.log('pair: ', pair);
+        // if the pair's key is the same as the key we're looking for
+        if (Object.keys(pair)[ 0 ] === key)
+        {
+          result = pair;
+        }
+      });
+      //console.log('bucket found, result is: ', result);
+    }
     return result;
   }
 
@@ -128,7 +142,18 @@ class HashTable
    */
   has(key)
   {
+    let indexOfBucket = this.hash(key);
+    let isFound = false;
 
+    if (this.table[ indexOfBucket ])
+    {
+      // resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+
+      // put all of the keys from this bucket into an array and check if that array .includes() the key we're looking for
+      isFound = Object.keys(Object.assign({}, ...this.table[ indexOfBucket ].values())).includes(key);
+      //console.log('was it found? ', isFound);
+    }
+    return isFound;
   }
 
   /**

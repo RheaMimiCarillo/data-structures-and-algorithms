@@ -28,17 +28,31 @@ describe('Testing the Hash Table class', () =>
     let testHashTable = new HashTable(1024);
 
     let testData = [ 'Cat', 'Felix' ];
-    //let expectedBucket = testHashTable.hash('Cat');
 
-    // console.log('expected Bucket: ', expectedBucket);
+    // expected get result:  { Cat: 'Felix' }
+    let expectedResult = { [ testData[ 0 ] ]: testData[ 1 ] };
+    // console.log('expected get result: ', expectedResult);
+
     testHashTable.set(testData[ 0 ], testData[ 1 ]);
 
     let result = testHashTable.get('Cat');
-    console.log('result: ', result);
-  });
-  test.skip('Successfully returns null for a key that does not exist in the hashtable', () =>
-  {
+    // console.log('get results: ', result);
 
+    expect(result).toEqual(expectedResult);
+  });
+  test('Successfully returns null for a key that does not exist in the hashtable', () =>
+  {
+    let testHashTable = new HashTable(1024);
+
+    let testData = [ 'Cat', 'Felix' ];
+
+    // { Cat: 'Felix' }
+    testHashTable.set(testData[ 0 ], testData[ 1 ]);
+
+    let result = testHashTable.has('Cat');
+    // console.log('has("Cat") results: ', result);
+
+    expect(result).toEqual(true);
   });
   test.skip('Successfully returns a list of all unique keys that exist in the hashtable', () =>
   {
