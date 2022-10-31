@@ -108,7 +108,7 @@ class HashTable
     // and then with retrieval? should I return an array of results for duplicate keys?
 
     let indexOfBucket = this.hash(key);
-    let result = null;
+    let results = [];
 
     // if the bucket isn't null, then it's a LinkedList
     if (this.table[ indexOfBucket ])
@@ -119,19 +119,20 @@ class HashTable
       // get an array of the values in the bucket
       let pairs = this.table[ indexOfBucket ].values();
 
-      // for each value pair in the bucket
+      // for each key:value pair in the bucket
       pairs.forEach(pair =>
       {
-        //console.log('pair: ', pair);
         // if the pair's key is the same as the key we're looking for
+        //console.log('pair: ', pair);
         if (Object.keys(pair)[ 0 ] === key)
         {
-          result = pair;
+          results.push(pair);
         }
       });
       //console.log('bucket found, result is: ', result);
+      return results;
     }
-    return result;
+    return null;
   }
 
   /**
@@ -168,6 +169,26 @@ class HashTable
     // if bucket !null
     // return bucket.values()
     // by the end of it, we'll have an array with arrays of keys
+
+    // traverse this.table array
+    // if the current bucket isn't null, try to push any keys in the bucket into an array
+    // return the array
+
+    let keysArr = [];
+
+    this.table.forEach(bucket =>
+    {
+      // if the linkedlist in the bucket has at least one node with a value
+      if (bucket.head.value)
+      {
+        // get all of the keys in the bucket
+        let currentBucketKeys = Object.keys(Object.assign({}, ...bucket.values())).then([... new Set]);
+        console.log('did this crazy thing work? ', currentBucketKeys);
+        // and push those keys into the keysArr
+        keysArr.push(...currentBucketKeys);
+      }
+    });
+    return keysArr;
   }
 }
 

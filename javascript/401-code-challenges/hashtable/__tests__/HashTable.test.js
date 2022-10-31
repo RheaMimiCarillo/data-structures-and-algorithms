@@ -13,15 +13,9 @@ describe('Testing the Hash Table class', () =>
 
     let testData = [ 'Cat', 'Felix' ];
 
-    // key `Cat` is bucket #808
-    let expectedBucket = testHashTable.hash(testData[ 0 ]);
-
-    // console.log('expected Bucket: ', expectedBucket);
     testHashTable.set(testData[ 0 ], testData[ 1 ]);
 
-    //console.log('testHashTable[808]: ', testHashTable[ expectedBucket ]);
-
-    expect(testHashTable.table[ expectedBucket ]).toBeInstanceOf(LinkedList);
+    expect(testHashTable.has('Cat')).toEqual(true);
   });
   test('Retrieving based on a key returns the value stored', () =>
   {
@@ -36,9 +30,9 @@ describe('Testing the Hash Table class', () =>
     testHashTable.set(testData[ 0 ], testData[ 1 ]);
 
     let result = testHashTable.get('Cat');
-    // console.log('get results: ', result);
+    //console.log('get results: ', result);
 
-    expect(result).toEqual(expectedResult);
+    expect(result[ 0 ]).toEqual(expectedResult);
   });
   test('Successfully returns null for a key that does not exist in the hashtable', () =>
   {
@@ -54,20 +48,89 @@ describe('Testing the Hash Table class', () =>
 
     expect(result).toEqual(true);
   });
-  test.skip('Successfully returns a list of all unique keys that exist in the hashtable', () =>
+  test('Successfully returns a list of all unique keys that exist in the hashtable', () =>
   {
+    let testHashTable = new HashTable(1024);
 
+    const testCat1 = { 'Cat': 'Felix' };
+
+    const testCat2 = { 'Cat': 'Dot' };
+
+    const testLizard = { 'Bearded Dragon': 'Sock' };
+
+    // { Cat: 'Felix' }
+    testHashTable.set(Object.keys(testCat1)[ 0 ], testCat1[ Object.keys(testCat1)[ 0 ] ]);
+
+    // { Cat: 'Dot' }
+    testHashTable.set(Object.keys(testCat2)[ 0 ], testCat2[ Object.keys(testCat2)[ 0 ] ]);
+
+    // {Bearded Dragon: 'Sock'}
+    testHashTable.set(Object.keys(testLizard)[ 0 ], testLizard[ Object.keys(testLizard)[ 0 ] ]);
+
+    console.log('testLizard: ', Object.keys(testLizard)[ 0 ], testLizard[ Object.keys(testLizard)[ 0 ] ]);
+
+    // [ 'Cat', 'Bearded Dragon']
+    let result = testHashTable.get('Bearded Dragon');
+    console.log('has("Bearded Dragon") results: ', result);
+
+    // { Cat: 'Dot' } === { 'Cat': 'Dot' }
+    // expect(result[ 1 ]).toBeTruthy();
   });
-  test.skip('Successfully handle a collision within the hashtable', () =>
+  test('Successfully handle a collision within the hashtable', () =>
   {
+    let testHashTable = new HashTable(1024);
 
+    const testCat1 = { 'Cat': 'Felix' };
+
+    const testCat2 = { 'Cat': 'Dot' };
+
+    // { Cat: 'Felix' }
+    testHashTable.set(Object.keys(testCat1)[ 0 ], testCat1[ Object.keys(testCat1)[ 0 ] ]);
+
+    // { Cat: 'Dot' }
+    testHashTable.set(Object.keys(testCat2)[ 0 ], testCat2[ Object.keys(testCat2)[ 0 ] ]);
+
+    // console.log('testCat1 and value: ', Object.keys(testCat1)[ 0 ], testCat1[ Object.keys(testCat1)[ 0 ] ]);
+
+    // [ { Cat: 'Felix' }, { Cat: 'Dot' } ]
+    let result = testHashTable.get('Cat');
+    console.log('has("Cat") results: ', result);
+
+    // { Cat: 'Dot' } === { 'Cat': 'Dot' }
+    expect(result[ 1 ]).toBeTruthy();
   });
-  test.skip('Successfully retrieve a value from a bucket within the hashtable that has a collision', () =>
-  {
 
+  test('Successfully retrieve a value from a bucket within the hashtable that has a collision', () =>
+  {
+    let testHashTable = new HashTable(1024);
+
+    const testCat1 = { 'Cat': 'Felix' };
+
+    const testCat2 = { 'Cat': 'Dot' };
+
+    // { Cat: 'Felix' }
+    testHashTable.set(Object.keys(testCat1)[ 0 ], testCat1[ Object.keys(testCat1)[ 0 ] ]);
+
+    // { Cat: 'Dot' }
+    testHashTable.set(Object.keys(testCat2)[ 0 ], testCat2[ Object.keys(testCat2)[ 0 ] ]);
+
+    // console.log('testCat1 and value: ', Object.keys(testCat1)[ 0 ], testCat1[ Object.keys(testCat1)[ 0 ] ]);
+
+    // [ { Cat: 'Felix' }, { Cat: 'Dot' } ]
+    let result = testHashTable.get('Cat');
+    //console.log('has("Cat") results: ', result);
+
+    // { Cat: 'Dot' } === { 'Cat': 'Dot' }
+    expect(result[ 1 ]).toEqual(testCat2);
   });
-  test.skip('Successfully hash a key to an in-range value', () =>
+  test('Successfully hash a key to an in-range value', () =>
   {
+    const size = 1024;
+    let testHashTable = new HashTable(size);
 
+    const testKey = testHashTable.hash('Before there was time, before there was anything, there was nothing, and before there was nothing... there were monsters.');
+
+    expect(testKey).toBeGreaterThanOrEqual(0);
+    expect(testKey).toBeLessThan(size);
   });
 });
