@@ -182,13 +182,16 @@ class HashTable
       if (bucket.head.value)
       {
         // get all of the keys in the bucket
-        let currentBucketKeys = Object.keys(Object.assign({}, ...bucket.values())).then([... new Set]);
-        console.log('did this crazy thing work? ', currentBucketKeys);
-        // and push those keys into the keysArr
+        let currentBucketKeys = Object.keys(Object.assign({}, ...bucket.values()));
+        // console.log('unique values in current bucket: ', currentBucketKeys);
+
         keysArr.push(...currentBucketKeys);
       }
     });
-    return keysArr;
+
+    // Set() returns an array with only unique values
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+    return [ ... new Set(keysArr) ];
   }
 }
 

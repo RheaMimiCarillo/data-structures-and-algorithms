@@ -1,7 +1,6 @@
 'use strict';
 
 const HashTable = require('../HashTable');
-const LinkedList = require('../LinkedList');
 
 describe('Testing the Hash Table class', () =>
 {
@@ -67,14 +66,13 @@ describe('Testing the Hash Table class', () =>
     // {Bearded Dragon: 'Sock'}
     testHashTable.set(Object.keys(testLizard)[ 0 ], testLizard[ Object.keys(testLizard)[ 0 ] ]);
 
-    console.log('testLizard: ', Object.keys(testLizard)[ 0 ], testLizard[ Object.keys(testLizard)[ 0 ] ]);
+    // console.log('testLizard: ', Object.keys(testLizard)[ 0 ], testLizard[ Object.keys(testLizard)[ 0 ] ]);
 
-    // [ 'Cat', 'Bearded Dragon']
-    let result = testHashTable.get('Bearded Dragon');
-    console.log('has("Bearded Dragon") results: ', result);
+    // [ 'Bearded Dragon', 'Cat']
+    let results = testHashTable.keys();
+    // console.log('.keys() results: ', results);
 
-    // { Cat: 'Dot' } === { 'Cat': 'Dot' }
-    // expect(result[ 1 ]).toBeTruthy();
+    expect(results).toEqual([ 'Bearded Dragon', 'Cat' ]);
   });
   test('Successfully handle a collision within the hashtable', () =>
   {
@@ -94,7 +92,7 @@ describe('Testing the Hash Table class', () =>
 
     // [ { Cat: 'Felix' }, { Cat: 'Dot' } ]
     let result = testHashTable.get('Cat');
-    console.log('has("Cat") results: ', result);
+    //console.log('has("Cat") results: ', result);
 
     // { Cat: 'Dot' } === { 'Cat': 'Dot' }
     expect(result[ 1 ]).toBeTruthy();

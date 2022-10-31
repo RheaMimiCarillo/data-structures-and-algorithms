@@ -5,14 +5,14 @@ const LinkedList = require('../LinkedList');
 describe('Testing the Linked List class', () =>
 {
 
-  test.skip('Should instantiate an empty linked list', () =>
+  test('Should instantiate an empty linked list', () =>
   {
     let list = new LinkedList();
 
     expect(list).toHaveProperty('head', null);
   });
 
-  test.skip('Should be able to add nodes', () =>
+  test('Should be able to add nodes', () =>
   {
     let list = new LinkedList();
     list.add(10);
@@ -25,7 +25,7 @@ describe('Testing the Linked List class', () =>
     expect(list.head.next).toHaveProperty('value', 20);
   });
 
-  test.skip('Should be able to retrieve a list of values', () =>
+  test('Should be able to retrieve a list of values', () =>
   {
     let list = new LinkedList();
     list.add(1);
@@ -42,7 +42,7 @@ describe('Testing the Linked List class', () =>
     expect(values[ 3 ]).toEqual(4);
   });
 
-  test.skip('Should be able to convert values to a string', () =>
+  test('Should be able to convert values to a string', () =>
   {
     let list = new LinkedList();
     list.add(2);
@@ -55,7 +55,7 @@ describe('Testing the Linked List class', () =>
     expect(string).toEqual('2 -> 4 -> 6 -> 8 -> ');
   });
 
-  test.skip('Should be able to find a value stored in the list', () =>
+  test('Should be able to find a value stored in the list', () =>
   {
     let list = new LinkedList();
     list.add('Test');

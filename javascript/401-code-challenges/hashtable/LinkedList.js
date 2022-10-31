@@ -2,22 +2,26 @@
 
 const Node = require('./Node');
 
-class LinkedList {
-  constructor() {
+class LinkedList
+{
+  constructor()
+  {
     this.head = null;
   }
 
   // add new Node to end of LinkedList
-  add(value) {
+  add(value)
+  {
     const node = new Node(value);
-    if (!this.head) {
+    if (!this.head)
+    {
       this.head = node;
       return;
     }
-    console.log('added this thing to bucket: ', value);
 
     let current = this.head;
-    while (current.next) {
+    while (current.next)
+    {
       current = current.next;
     }
     current.next = node;
@@ -29,11 +33,14 @@ class LinkedList {
 
 
   // in this case, I want to search for `value.key`
-  find(value) {
+  find(value)
+  {
     let current = this.head;
-    while (current) {
+    while (current)
+    {
       // console.log('linkedlist find current: ', current);
-      if (current.value === value) {
+      if (current.value === value)
+      {
         return current.value;
       }
       current = current.next;
@@ -42,19 +49,22 @@ class LinkedList {
   }
 
   // returns an array of all `values/data` in this LinkedList
-  values() {
+  values()
+  {
     let values = [];
     let current = this.head;
-    while (current) {
+    while (current)
+    {
       values.push(current.value);
       current = current.next;
     }
     return values;
   }
 
-  toString() {
+  toString()
+  {
     let values = this.values();
-    return values.reduce((prev, val) => prev += `${val} -> `, '');
+    return values.reduce((prev, val) => prev += `${ val } -> `, '');
   }
 }
 
