@@ -10,7 +10,7 @@ describe('Testing the Hash Table class', () =>
   {
     let testHashTable = new HashTable(1024);
 
-    let testData = [ 'Cat', 'Felix' ];
+    const testData = [ 'Cat', 'Felix' ];
 
     testHashTable.set(testData[ 0 ], testData[ 1 ]);
 
@@ -20,10 +20,10 @@ describe('Testing the Hash Table class', () =>
   {
     let testHashTable = new HashTable(1024);
 
-    let testData = [ 'Cat', 'Felix' ];
+    const testData = [ 'Cat', 'Felix' ];
 
     // expected get result:  { Cat: 'Felix' }
-    let expectedResult = { [ testData[ 0 ] ]: testData[ 1 ] };
+    const expectedResult = { [ testData[ 0 ] ]: testData[ 1 ] };
     // console.log('expected get result: ', expectedResult);
 
     testHashTable.set(testData[ 0 ], testData[ 1 ]);
@@ -33,19 +33,21 @@ describe('Testing the Hash Table class', () =>
 
     expect(result[ 0 ]).toEqual(expectedResult);
   });
-  test('Successfully returns null for a key that does not exist in the hashtable', () =>
+  test('Successfully returns false for a key that does not exist in the hashtable', () =>
   {
     let testHashTable = new HashTable(1024);
 
-    let testData = [ 'Cat', 'Felix' ];
+    const testData = [ 'Cat', 'Felix' ];
 
     // { Cat: 'Felix' }
     testHashTable.set(testData[ 0 ], testData[ 1 ]);
 
-    let result = testHashTable.has('Cat');
+    let trueResult = testHashTable.has('Cat');
+    let falseResult = testHashTable.has('Elephant');
     // console.log('has("Cat") results: ', result);
 
-    expect(result).toEqual(true);
+    expect(trueResult).toEqual(true);
+    expect(falseResult).toEqual(false);
   });
   test('Successfully returns a list of all unique keys that exist in the hashtable', () =>
   {
@@ -57,6 +59,8 @@ describe('Testing the Hash Table class', () =>
 
     const testLizard = { 'Bearded Dragon': 'Sock' };
 
+    const testDog = { 'Bichon Frisé': 'Snoopy' };
+
     // { Cat: 'Felix' }
     testHashTable.set(Object.keys(testCat1)[ 0 ], testCat1[ Object.keys(testCat1)[ 0 ] ]);
 
@@ -66,13 +70,16 @@ describe('Testing the Hash Table class', () =>
     // {Bearded Dragon: 'Sock'}
     testHashTable.set(Object.keys(testLizard)[ 0 ], testLizard[ Object.keys(testLizard)[ 0 ] ]);
 
+    // { 'Bichon Frise': 'Snoopy' }
+    testHashTable.set(Object.keys(testDog)[ 0 ], testDog[ Object.keys(testDog)[ 0 ] ]);
+
     // console.log('testLizard: ', Object.keys(testLizard)[ 0 ], testLizard[ Object.keys(testLizard)[ 0 ] ]);
 
     // [ 'Bearded Dragon', 'Cat']
     let results = testHashTable.keys();
-    // console.log('.keys() results: ', results);
+    //console.log('.keys() results: ', results);
 
-    expect(results).toEqual([ 'Bearded Dragon', 'Cat' ]);
+    expect(results).toEqual([ 'Bichon Frisé', 'Bearded Dragon', 'Cat' ]);
   });
   test('Successfully handle a collision within the hashtable', () =>
   {

@@ -8,16 +8,15 @@ class HashTable
   {
     this.size = size;
     this.table = new Array(size);
+
+    /* visualization of hash table's array (size(3)):
+    const thisTable = [
+      bucket 0: { HEAD -> { key1: value2 } ->  { key2: value2 } -> null },
+      bucket 1: { HEAD -> { key3: value3 } ->  { key4: value4 } -> null },
+      bucket 2: { HEAD -> { key5: value5 } ->  { key6: value6 } -> null }
+    ];
+    */
   }
-
-  /* visualization of hash table:
-
-  const thisTable = [
-    bucket 0: { { key: value } ->  { key2: value2 } -> null },
-    bucket 1: { { key: value } ->  { key2: value2 } -> null },
-    bucket 2: { { key: value } ->  { key2: value2 } -> null }
-  ];
-  */
 
   /**
    * Return a hash value for the provided key.
@@ -70,17 +69,29 @@ class HashTable
     let indexOfBucket = this.hash(key);
 
     let item = { [ key ]: value };
-    //console.log('key in set: ', key);
-    // console.log('value in set: ', value);
-    // console.log('item in set: ', item);
-    // console.log('set to bucket: ', indexOfBucket);
 
-    // console.log('typeof [key]', typeof(item.key));
+    /* TODO
+      I just learned that hashmaps can't have any duplicate keys
+      If there are duplicate keys, then update the `value` with the latest data
+      Strategy:
+        traverse to the vicinity of the duplicate key
+        make a temp node to store the updated key:value
+        make the temp Node's.next point to the old Node's.next
+        then make the current/previous.next point to the temp node
+        at this point, the chain is not broken and we can set the old node's.next to `null`
 
+        ALTERNATIVELY -> I can just navigate to the vicinity of the the old node and then reassign its `.value` to the new key:value
+
+        I'm hesitant to do this, because it would entail rewriting how the starter-code's LinkedList class works
+    */
     if (this.table[ indexOfBucket ])
     {
-      //console.log('found something in bucket (hopefully a LinkedList)');
-      this.table[ indexOfBucket ].add(item);
+      // if the current bucket's LinkedList doesn't already have this exact key:value pair somewhere in it
+      if (!this.table[ indexOfBucket ].values().includes(item))
+      {
+        // add the new item to the end of the LinkedList/bucket
+        this.table[ indexOfBucket ].add(item);
+      }
     }
     else
     {
@@ -98,6 +109,7 @@ class HashTable
    */
   get(key)
   {
+    // NOTES:
     // using `get` we know the name of the key we want to 'get'
     // hash the provided key (and use modulus to find the array-index/bucket containing that key)
     // then traverse the in that bucket/linked-list for any string that matches the 'key'
@@ -161,14 +173,17 @@ class HashTable
    */
   keys()
   {
+    // NOTES
     // traverse the entire hashtable and return an array of all `keys` in the table
     // for buckets in this table
     // if bucket !null
     // return bucket.values()
     // by the end of it, we'll have an array with arrays of keys
 
-    // traverse this.table array
-    // if the current bucket isn't null, try to push any keys in the bucket into an array
+    // traverse this.table[]
+    // if the current bucket isn't null, get all keys and try to push keys into an array
+
+    // remove all duplicate entries from the array of keys
     // return the array
 
     let keysArr = [];
@@ -207,6 +222,7 @@ class HashTable
         - otherwise, add the current word to the HashTable
 
     */
+
     /* Stretch Goals:
 
        - Modify your function to return a count of each of the words in the provided string
@@ -214,8 +230,6 @@ class HashTable
 
        - Modify your function to return a list of the words most frequently used in the provided string
          Strategy:
-
-
     */
 
     // split book into an array of words
@@ -227,11 +241,10 @@ class HashTable
     // loop through array of words
     for (let i = 0; i < bookWords.length; i++)
     {
-      let currentWord = bookWords[i];
+      let currentWord = bookWords[ i ];
 
-      // TODO: strip most non-alphabet characters from currentWord with regex
-      // TODO: make currentWord lowercase
-
+      // TODO: .replace() most non-alphabet characters from currentWord with regex (except apostrophes in the middle of a word)
+      // TODO: make currentWord lowercase (for easier comparisons)
 
       // if the hashtable already has the word (as a key)
       if (this.has(currentWord))
