@@ -25,7 +25,7 @@ describe('Testing repeatedWord() method', () =>
 
     expect(result).toEqual('No repeated words found');
   });
-  test('Should return first instance of a repeated word', () =>
+  test('Should return first instance of a repeated word for book with duplicate words', () =>
   {
     let testHashTable = new HashTable(1024);
 
