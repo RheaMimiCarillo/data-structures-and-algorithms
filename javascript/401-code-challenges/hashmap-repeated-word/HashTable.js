@@ -30,6 +30,7 @@ class HashTable
       // take sum of character codes in `key
       charSum += key.charCodeAt(char);
     }
+    // NOTES:
     // return the charSum, multiplied by a large prime number (599)
     // then dividing by the number of buckets in this table
     // and finally returning the remainder
@@ -48,7 +49,6 @@ class HashTable
       69648 % 1024 = 16
 
       Key gets placed in index of 16.
-
     */
     return (charSum * 599) % this.size;
   }
@@ -61,6 +61,7 @@ class HashTable
    */
   set(key, value)
   {
+    // NOTES:
     // .hash() the provided key to get the index of the bucket to .set() to
     // if the bucket is null, make it into a LinkedList()
     // and then make a new Node to add to the end of the LinkedList()
@@ -70,23 +71,9 @@ class HashTable
 
     let item = { [ key ]: value };
 
-    /* TODO
-      I just learned that hashmaps can't have any duplicate keys
-      If there are duplicate keys, then update the `value` with the latest data
-      Strategy:
-        traverse to the vicinity of the duplicate key
-        make a temp node to store the updated key:value
-        make the temp Node's.next point to the old Node's.next
-        then make the current/previous.next point to the temp node
-        at this point, the chain is not broken and we can set the old node's.next to `null`
-
-        ALTERNATIVELY -> I can just navigate to the vicinity of the the old node and then reassign its `.value` to the new key:value
-
-        I'm hesitant to do this, because it would entail rewriting how the starter-code's LinkedList class works
-    */
     if (this.table[ indexOfBucket ])
     {
-      // if the current bucket's LinkedList doesn't already have this exact key:value pair somewhere in it
+      // check if the current bucket's LinkedList doesn't already has this exact key:value pair somewhere in it
       if (!this.table[ indexOfBucket ].values().includes(item))
       {
         // add the new item to the end of the LinkedList/bucket
