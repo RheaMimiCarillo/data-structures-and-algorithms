@@ -3,7 +3,7 @@ const HashTable = require('../HashTable');
 
 describe('Testing repeatedWord() method', () =>
 {
-  test('Should return null for empty book', () =>
+  test('Should return "No repeated words found" for empty book', () =>
   {
     let testHashTable = new HashTable(1024);
 
