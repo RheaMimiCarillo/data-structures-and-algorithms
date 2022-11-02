@@ -39,7 +39,7 @@ I'm going to approach this challenge utilizing the 'Single-responsibility princi
 
 My strategy is to traverse one tree and put all values from that tree into a HashTable. Then, I'll traverse the second tree and at each iteration, I'll check the HashTable to see if there's a match. If there is a match, I'll put those values into an array (if the array doesn't already have that value in it). Finally, I'll return the array of duplicates, without repeats.
 
-The **time complexity** for this approach is, at worse, ->
+The **time complexity** for this approach is, at worst, ->
   - read all values from left tree (LinkedList traversal)
   - read all values from left tree array (Array traversal)
   - read all values from right tree (LinkedList traversal)
@@ -54,5 +54,6 @@ The **space complexity** for this approach is, at worst, O(4n) ->
 
 ## Stretch Goals
 
-- Describe how you might solve this differently if the parameters were Binary Search Trees.
-  - What are the potential efficiency differences?
+- **Describe how you might solve this differently if the parameters were Binary Search Trees.**
+  - **What are the potential efficiency differences?**
+    - *a potential efficiency difference might be that you can skip entire branches if you know your smallest number on one tree's branch is larger than the largest number on the other tree's branch*
