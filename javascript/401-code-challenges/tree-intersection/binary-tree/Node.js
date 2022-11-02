@@ -1,6 +1,5 @@
 'use strict';
 
-
 class Node
 {
   // left and right are null, by default

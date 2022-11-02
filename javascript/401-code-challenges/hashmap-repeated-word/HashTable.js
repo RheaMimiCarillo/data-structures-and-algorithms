@@ -146,7 +146,28 @@ class HashTable
     {
       // resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
-      // put all of the keys from this bucket into an array and check if that array .includes() the key we're looking for
+      /* order of events:
+        1. `this.table[ indexOfBucket ]` is LinkedList
+          - bucket 2: { HEAD -> { key5: value5 } ->  { key6: value6 } -> null }
+
+        2. `...this.table[ indexOfBucket ].values()` is an array of values from the LinkedList
+          - [{ key5: value5 }, { key6: value6 }]
+
+        3. `with Object.assign()`, we declare a target to put values into (an empty object, in this case{}), and copy all of the key:value pairs from the array we made from the LinkedList into an the target object
+          - {
+              { key5: value5 },
+              { key6: value6 }
+            }
+
+        4. then we use `Object.keys` to get an array of only `keys` (the values are stripped out)
+            - [key5, key6]
+
+        5.  then we use the `Array.includes()` method to see if the the array of keys has the key we're searching for
+            - `true` or `false`
+        6. assign the Boolean from .includes(key) to `isFound`
+
+        it's a one-liner that does a whole lot and feels like of hack-y
+      */
       isFound = Object.keys(Object.assign({}, ...this.table[ indexOfBucket ].values())).includes(key);
       //console.log('was it found? ', isFound);
     }
