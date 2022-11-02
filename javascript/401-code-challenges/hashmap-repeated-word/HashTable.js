@@ -1,6 +1,7 @@
 'use strict';
 
 const LinkedList = require('./LinkedList');
+const BinaryTree = require('./')
 
 class HashTable
 {
@@ -145,31 +146,30 @@ class HashTable
     if (this.table[ indexOfBucket ])
     {
       // resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+      // assign isFound to a boolean if the key is already in this HashTable
+      isFound = Object.keys(Object.assign({}, ...this.table[ indexOfBucket ].values())).includes(key);
+      //console.log('was it found? ', isFound);
 
-      /* order of events:
-        1. `this.table[ indexOfBucket ]` is LinkedList
+      /* NOTES for students -> order of events:
+        1. `this.table[ indexOfBucket ]` is LinkedList/bucket
           - bucket 2: { HEAD -> { key5: value5 } ->  { key6: value6 } -> null }
 
         2. `...this.table[ indexOfBucket ].values()` is an array of values from the LinkedList
           - [{ key5: value5 }, { key6: value6 }]
 
-        3. `with Object.assign()`, we declare a target to put values into (an empty object, in this case{}), and copy all of the key:value pairs from the array we made from the LinkedList into an the target object
+        3. with `Object.assign()`, we specify an object to put values into ({} an empty object literal, in this case), and then specify the object we want to copy values from (array of key:value pairs that were in the LinkedList, in this case), and then we get an object with all key:values pairs as separate entries
           - {
-              { key5: value5 },
-              { key6: value6 }
+              key5: value5,
+              key6: value6
             }
 
-        4. then we use `Object.keys` to get an array of only `keys` (the values are stripped out)
-            - [key5, key6]
+        4. then we use `Object.keys` to get an array of only `keys` (the values have been stripped out)
+            - [ key5, key6 ]
 
         5.  then we use the `Array.includes()` method to see if the the array of keys has the key we're searching for
             - `true` or `false`
         6. assign the Boolean from .includes(key) to `isFound`
-
-        it's a one-liner that does a whole lot and feels like of hack-y
       */
-      isFound = Object.keys(Object.assign({}, ...this.table[ indexOfBucket ].values())).includes(key);
-      //console.log('was it found? ', isFound);
     }
     return isFound;
   }
@@ -251,8 +251,8 @@ class HashTable
     {
       let currentWord = bookWords[ i ];
 
-      // TODO: .replace() most non-alphabet characters from currentWord with regex (except apostrophes in the middle of a word)
-      // TODO: make currentWord lowercase (for easier comparisons)
+      // TODO: `.replace('')` most non-alphabet characters from currentWord using regex (except apostrophes in the middle of a words)
+      // TODO: make currentWord lowercase (for easier comparisons during `.has()`)
 
       // if the hashtable already has the word (as a key)
       if (this.has(currentWord))
@@ -271,7 +271,7 @@ class HashTable
   }
 
   /**
-   *
+   * accepts two trees and returns a set of values found in both trees
    * @param {BinaryTree} leftTree
    * @param {BinaryTree} rightTree
    * @return {Array} set of values in both trees
@@ -286,7 +286,7 @@ class HashTable
       - by the end of the algorithm, we should have a set of all values found in both trees, without repeats
     */
     const results = [];
-
+    let leftArr = leftTree.BinaryTree.preOrder();
 
     return results;
   }

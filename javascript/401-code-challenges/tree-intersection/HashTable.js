@@ -1,6 +1,7 @@
 'use strict';
 
 const LinkedList = require('./LinkedList');
+const BinaryTree = require('./binary-tree/BinaryTree');
 
 class HashTable
 {
@@ -145,10 +146,30 @@ class HashTable
     if (this.table[ indexOfBucket ])
     {
       // resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-
-      // put all of the keys from this bucket into an array and check if that array .includes() the key we're looking for
+      // assign isFound to a boolean if the key is already in this HashTable
       isFound = Object.keys(Object.assign({}, ...this.table[ indexOfBucket ].values())).includes(key);
       //console.log('was it found? ', isFound);
+
+      /* NOTES for students -> order of events:
+        1. `this.table[ indexOfBucket ]` is LinkedList/bucket
+          - bucket 2: { HEAD -> { key5: value5 } ->  { key6: value6 } -> null }
+
+        2. `...this.table[ indexOfBucket ].values()` is an array of values from the LinkedList
+          - [{ key5: value5 }, { key6: value6 }]
+
+        3. with `Object.assign()`, we specify an object to put values into ({} an empty object literal, in this case), and then specify the object we want to copy values from (array of key:value pairs that were in the LinkedList, in this case), and then we get an object with all key:values pairs as separate entries
+          - {
+              key5: value5,
+              key6: value6
+            }
+
+        4. then we use `Object.keys` to get an array of only `keys` (the values have been stripped out)
+            - [ key5, key6 ]
+
+        5.  then we use the `Array.includes()` method to see if the the array of keys has the key we're searching for
+            - `true` or `false`
+        6. assign the Boolean from .includes(key) to `isFound`
+      */
     }
     return isFound;
   }
@@ -207,7 +228,6 @@ class HashTable
         - at each iteration, look at current word -> strip most punctuation with regex -> make it lowercase
       - while looping, call .has() to see if the HashTable already has the current word, if it does, then return that word
         - otherwise, add the current word to the HashTable
-
     */
 
     /* Stretch Goals:
@@ -230,8 +250,8 @@ class HashTable
     {
       let currentWord = bookWords[ i ];
 
-      // TODO: .replace() most non-alphabet characters from currentWord with regex (except apostrophes in the middle of a word)
-      // TODO: make currentWord lowercase (for easier comparisons)
+      // TODO: `.replace('')` most non-alphabet characters from currentWord using regex (except apostrophes in the middle of a words)
+      // TODO: make currentWord lowercase (for easier comparisons during `.has()`)
 
       // if the hashtable already has the word (as a key)
       if (this.has(currentWord))
@@ -247,6 +267,44 @@ class HashTable
       }
     }
     return repeatedWord;
+  }
+
+  /**
+   * accepts two trees and returns a set of values found in both trees
+   * @param {BinaryTree} leftTree
+   * @param {BinaryTree} rightTree
+   * @return {Array} set of values in both trees
+   */
+  treeIntersection(leftTree, rightTree)
+  {
+    /* Strategy:
+      - declare a `results` array to store duplicate values
+      - traverse both trees to get arrays of values from each (preOrder is fine)
+      - traverse left array to store values into hashtable
+      - traverse right array and at each iteration, check 1. if the hashtable already .has() the value and 2. if the value is already in the `results` array (because I don't want repeats there, either) -> then add those values into the `results` array
+      - by the end of the algorithm, we should have a set of all values found in both trees, without repeats
+    */
+    const results = [];
+    let leftValuesArr = leftTree.preOrder();
+    console.log('leftValuesArr pre order: ',leftValuesArr);
+    let rightValuesArr = rightTree.preOrder();
+    console.log('rightValuesArr pre order: ',leftValuesArr);
+
+    leftValuesArr.forEach((value, idx) => this.set(value, idx));
+
+    // shoot! I just realized this.keys() returns the keys, but they've been turned into strings! I may have to rethink how I store my data before I proceed. I'm thinking I JSON.stringify as I store key:value pairs with the .set() method, then I JSON.parse the pairs when I want to access them? Will this solve my problem?
+    console.log('this.keys() after forEach: ', this.keys());
+
+    rightValuesArr.forEach(value =>
+    {
+      if (this.has(value) && !results.includes(value))
+      {
+        console.log('found matching value: ', value);
+        results.push(value);
+      }
+    });
+
+    return results;
   }
 }
 

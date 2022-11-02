@@ -16,6 +16,7 @@ class BinaryTree
     if (root !== null)
     {
       preOrderArr.push(root.data);
+      //console.log('pushed root.data: ', root.data, preOrderArr);
       if (root.left)
       {
         this.preOrder(root.left, preOrderArr);
