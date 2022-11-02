@@ -29,12 +29,12 @@ My test suite will cover these cases:
 
 ## Input and Output
 
-`Input:`
+**`Input:`**
 ![Input Tree 1](./images/BT1.png "Input Tree 1")
 ![Input Tree 2](./images/BT2.png "Input Tree 2")
 
-`Output`
-`100,160,125,175,200,350,500`
+**`Output:`**
+`[100,160,125,175,200,350,500]`
 
 ## Stretch Goals
 
