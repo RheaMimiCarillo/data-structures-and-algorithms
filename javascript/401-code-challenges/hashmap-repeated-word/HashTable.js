@@ -269,6 +269,27 @@ class HashTable
     }
     return repeatedWord;
   }
+
+  /**
+   *
+   * @param {BinaryTree} leftTree
+   * @param {BinaryTree} rightTree
+   * @return {Array} set of values in both trees
+   */
+  treeIntersection(leftTree, rightTree)
+  {
+    /* Strategy:
+      - declare a `results` array to store duplicate values
+      - traverse both trees to get arrays of values from each (preOrder is fine)
+      - traverse left array to store values into hashtable
+      - traverse right array and at each iteration, check 1. if the hashtable already .has() the value and 2. if the value is already in the `results` array (because I don't want repeats there, either) -> then add those values into the `results` array
+      - by the end of the algorithm, we should have a set of all values found in both trees, without repeats
+    */
+    const results = [];
+
+
+    return results;
+  }
 }
 
 module.exports = HashTable;
