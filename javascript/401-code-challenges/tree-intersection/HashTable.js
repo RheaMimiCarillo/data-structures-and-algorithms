@@ -1,7 +1,7 @@
 'use strict';
 
 const LinkedList = require('./LinkedList');
-const BinaryTree = require('./')
+const BinaryTree = require('./binary-tree/BinaryTree');
 
 class HashTable
 {
@@ -228,7 +228,6 @@ class HashTable
         - at each iteration, look at current word -> strip most punctuation with regex -> make it lowercase
       - while looping, call .has() to see if the HashTable already has the current word, if it does, then return that word
         - otherwise, add the current word to the HashTable
-
     */
 
     /* Stretch Goals:
@@ -286,7 +285,24 @@ class HashTable
       - by the end of the algorithm, we should have a set of all values found in both trees, without repeats
     */
     const results = [];
-    let leftArr = leftTree.BinaryTree.preOrder();
+    let leftValuesArr = leftTree.preOrder();
+    console.log('leftValuesArr pre order: ',leftValuesArr);
+    let rightValuesArr = rightTree.preOrder();
+    console.log('rightValuesArr pre order: ',leftValuesArr);
+
+    leftValuesArr.forEach((value, idx) => this.set(value, idx));
+
+    // shoot! I just realized this.keys() returns the keys, but they've been turned into strings! I may have to rethink how I store my data before I proceed. I'm thinking I JSON.stringify as I store key:value pairs with the .set() method, then I JSON.parse the pairs when I want to access them? Will this solve my problem?
+    console.log('this.keys() after forEach: ', this.keys());
+
+    rightValuesArr.forEach(value =>
+    {
+      if (this.has(value) && !results.includes(value))
+      {
+        console.log('found matching value: ', value);
+        results.push(value);
+      }
+    });
 
     return results;
   }
