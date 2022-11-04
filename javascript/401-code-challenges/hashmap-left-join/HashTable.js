@@ -231,7 +231,6 @@ class HashTable
     */
 
     /* Stretch Goals:
-
        - Modify your function to return a count of each of the words in the provided string
          Strategy: similar to above, except instead of looking for .has() matches, create and increment a count for each word that enters the hashmap, then return the count
 
