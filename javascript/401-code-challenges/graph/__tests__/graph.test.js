@@ -1,7 +1,6 @@
 'use strict';
 
 const Graph = require('../Graph');
-const Vertex = require('../Vertex');
 
 describe('Testing the Graph class', () =>
 {

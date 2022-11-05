@@ -1,8 +1,8 @@
 {
-  "name": "hashmap-repeated-word",
+  "name": "Graph",
   "version": "1.0.0",
   "description": "",
-  "main": "HashTable.js",
+  "main": "Graph.js",
   "scripts": {
     "test": "jest --verbose --coverage"
   },

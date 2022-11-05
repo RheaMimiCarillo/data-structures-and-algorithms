@@ -56,3 +56,7 @@ My test suite will cover these cases:
 ## Approach & Efficiency
 
 I'm going to approach this challenge utilizing the 'Single-responsibility principle'. Any methods I write will be clean, reusable, and elegant.
+
+## Resources
+
+1. [Virtual Whiteboard](https://projects.invisionapp.com/freehand/document/sEveKiS2A)

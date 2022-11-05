@@ -1,8 +1,24 @@
 'use strict';
 
-const Vertex = require('./Vertex');
 const Stack = require('./stack-and-queue/stack');
 const Queue = require('./stack-and-queue/queue');
+
+class Vertex
+{
+  constructor(value)
+  {
+    this.value = value;
+  }
+}
+
+class Edge
+{
+  constructor(vertex, weight = 1)
+  {
+    this.vertex = vertex;
+    this.weight = weight;
+  }
+}
 
 class Graph
 {
@@ -11,13 +27,14 @@ class Graph
     this.adjacencies = new Map();
   }
 
-  /* Graph adjacency list visualization:
-    Map() object
-    {
-      {a -> b, c}
-      {b -> c}
-      {c -> null}
-    }
+  /* adjacency list visualization:
+
+      using JS Map() object
+      {
+        a: [b, c],
+        b: [c],
+        c: []
+      }
 
   */
 
@@ -45,7 +62,7 @@ class Graph
   addEdge(startVertex, edgeVertex, weight = null)
   {
     //
-    if(this.adjacencies.has(startVertex) && this.adjacencies.has(edgeVertex))
+    if (this.adjacencies.has(startVertex) && this.adjacencies.has(edgeVertex))
     {
       //
     }
@@ -100,7 +117,7 @@ class Graph
   breadthFirst(root)
   {
     // adjacency list is stored in a hashmap
-    // therefore, the breadthFirst search is search all neighbors of `a`
+    // therefore, the breadthFirst search is a of search all neighbors of `a`
     // then all neighbors of `b`
     // then `c`, etc
 
@@ -118,6 +135,26 @@ class Graph
       NOTE: can use a JS Array instead of Queue
       - `shift` and `unshift`
 
+    */
+    /* Pseudocode from class:
+      ALGORITHM BreadthFirst(vertex)
+    DECLARE nodes <-- new List()
+    DECLARE breadth <-- new Queue()
+    DECLARE visited <-- new Set()
+
+    breadth.Enqueue(vertex)
+    visited.Add(vertex)
+
+    while (breadth is not empty)
+        DECLARE front <-- breadth.Dequeue()
+        nodes.Add(front)
+
+        for each child in front.Children
+            if(child is not visited)
+                visited.Add(child)
+                breadth.Enqueue(child)
+
+    return nodes;
     */
   }
 
