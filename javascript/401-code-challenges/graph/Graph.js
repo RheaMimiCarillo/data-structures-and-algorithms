@@ -46,26 +46,44 @@ class Graph
   addVertex(data)
   {
     let newVertex = new Vertex(data);
+    // note to self: look up how this `.set()` method works
     this.adjacencies.set(newVertex, []);
-
     return newVertex;
   }
 
   /**
-   * @param {Vertex} VertexOne
-   * @param {Vertex} VertexTwo
+   * @param {Vertex} startVertex
+   * @param {Vertex} endVertex
    * @param {int} weight
    * @return {none}
    * add a new `edge` between two Vertexs that are already in the graph
    * if specified, assign weight to edge
    */
-  addEdge(startVertex, edgeVertex, weight = null)
+  addEdge(startVertex, endVertex, weight = null)
   {
     //
-    if (this.adjacencies.has(startVertex) && this.adjacencies.has(edgeVertex))
+    if (this.adjacencies.has(startVertex) && this.adjacencies.has(endVertex))
     {
-      //
+      let edges = this.adjacencies.get(startVertex); // []
+      edges.push(new Edge(endVertex));
     }
+    else
+    {
+      throw new Error('Invalid input Vertex');
+    }
+  }
+
+  /**
+   * @param {Vertex} vertex
+   * @return {} collection of edges (and weights) connected to the given Vertex
+   */
+  getNeighbors(vertex)
+  {
+    //
+    const edges = new Map();
+
+
+    return edges;
   }
 
   /**
@@ -80,19 +98,6 @@ class Graph
     const allVertexs = new Map();
 
     return allVertexs;
-  }
-
-  /**
-   * @param {Vertex}
-   * @return {} collection of edges (and weights) connected to the given Vertex
-   */
-  getNeighbors(Vertex)
-  {
-    //
-    const edges = new Map();
-
-
-    return edges;
   }
 
   /**
