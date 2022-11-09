@@ -29,6 +29,15 @@ I am going to utilize a queue to iteratively traverse the graph by visiting each
 The time complexity of the traversal will be O(n),
 and the space complexity will be O(n).
 
+## Sample Data
+
+| Input                                | Output |
+|--------------------------------------|--------|
+| [Metroville, Pandora, ]              | $82    |
+| [Arendelle, New Monstropolis, Naboo] | $115   |
+| [Naboo, Pandora]                     | null   |
+| [Narnia, Arendelle, Naboo]           | null   |
+
 ## UML
 
 **Bread-first Traversal**
