@@ -17,26 +17,28 @@ class BinaryTree
   {
     let result = [];
 
-    const breadthFirstQueue = new Queue();
-
-    breadthFirstQueue.enqueue(this.root);
-
-    while(!breadthFirstQueue.isEmpty())
+    if (this.root !== null)
     {
-      let front = breadthFirstQueue.dequeue();
-      result.push(front.data);
+      const breadthFirstQueue = new Queue();
 
-      if (front.left)
-      {
-        breadthFirstQueue.enqueue(front.left);
-      }
+      breadthFirstQueue.enqueue(this.root);
 
-      if (front.right)
+      while (!breadthFirstQueue.isEmpty())
       {
-        breadthFirstQueue.enqueue(front.right);
+        let front = breadthFirstQueue.dequeue();
+        result.push(front.data);
+
+        if (front.left)
+        {
+          breadthFirstQueue.enqueue(front.left);
+        }
+
+        if (front.right)
+        {
+          breadthFirstQueue.enqueue(front.right);
+        }
       }
     }
-
     return result;
   }
 
