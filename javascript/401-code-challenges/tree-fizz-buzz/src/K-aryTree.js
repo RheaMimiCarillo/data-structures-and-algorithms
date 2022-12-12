@@ -4,9 +4,9 @@ const { Knode } = require('./Node.js');
 
 class KaryTree
 {
-  constructor()
+  constructor(root = null)
   {
-
+    this.root = root;
   }
 }
 
