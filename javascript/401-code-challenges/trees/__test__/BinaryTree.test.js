@@ -87,6 +87,7 @@ describe('Testing tree data structures', () =>
     let testBinarySearchTree = new BinarySearchTree();
   });
 
+  /*
   test('Can successfully return a collection from a breadth-first traversal', () =>
   {
     let testBinarySearchTree = new BinarySearchTree();
@@ -102,5 +103,6 @@ describe('Testing tree data structures', () =>
     //console.log(breadthFirstResult);
 
   });
+  */
 
 });
