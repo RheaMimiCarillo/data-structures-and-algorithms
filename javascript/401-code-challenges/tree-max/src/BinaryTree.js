@@ -13,10 +13,12 @@ class BinaryTree
    */
   findMax()
   {
-
     if (this.root === null) return new Error('Tree is empty');
 
-    const traversal = (currentRoot, currentMax) =>
+    let currentMax = this.root.data;
+
+    // helper function to traverse this binary tree recursively
+    const traversal = (currentRoot) =>
     {
       if (currentRoot !== null)
       {
@@ -27,17 +29,17 @@ class BinaryTree
 
         if (currentRoot.left)
         {
-          traversal(currentRoot, currentRoot.left);
+          traversal(currentRoot.left);
         }
 
         if (currentRoot.right)
         {
-          traversal(currentRoot, currentRoot.left);
+          traversal(currentRoot.right);
         }
       }
     };
-
-    console.log(traversal(this.root, this.root.data));
+    traversal(this.root);
+    return currentMax;
   }
 
   /**

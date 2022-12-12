@@ -15,7 +15,9 @@ describe('Testing tree data structures', () =>
     root.right = new Node (5);
     testTree.root = root;
 
-    expect(testTree.root.data).toEqual(7);
+    let result = testTree.findMax();
+
+    expect(result).toEqual(7);
   });
 
   test('Can successfully return an Error when called on an empty tree', () =>
@@ -23,9 +25,7 @@ describe('Testing tree data structures', () =>
     let emptyTree = new BinaryTree();
     let result = emptyTree.findMax();
 
-    //console.log('empty tree result: ', result);
-
-    expect(result).toBeFalsy();
+    expect(result).toBeInstanceOf(Error);
   });
 
   test('Can successfully return the maximum value from a tree with duplicate maximum values', () =>
@@ -41,5 +41,4 @@ describe('Testing tree data structures', () =>
 
     expect(result).toEqual(7);
   });
-
 });
