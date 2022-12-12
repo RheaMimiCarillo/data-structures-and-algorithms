@@ -28,7 +28,7 @@
 
 ### Big O
 
-- **`breadthFirst()`**
+- **`treeFizzBuzz()`**
   - Time: `O(n)`
     - As a traversal we must visit every node in the tree
   - Space: `O(n)`
