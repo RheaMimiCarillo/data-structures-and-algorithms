@@ -17,18 +17,13 @@
 
 ### Binary Tree Max UML
 
-**Input:**
->
-> ![Tree Max Input](./images/tree-max-UML.png "Tree Max Input")
-
-**Output:**
-> `11`
+> ![Tree Max UML](./images/tree-max-UML.png "Tree Max UML")
 
 ### Big O
 
 - **`findMax()`**
   - Time: `O(n)`
-    - Our input tree isn't always sorted, so the entire tree must be traversed to determine the maximum value contained therein
+    - The input tree isn't always sorted, so the entire tree must be traversed to determine the maximum value contained therein
   - Space: `O(n)`
     - The algorithm uses recursion, so `O(n)` accounts for the frames added to the call-stack
 
