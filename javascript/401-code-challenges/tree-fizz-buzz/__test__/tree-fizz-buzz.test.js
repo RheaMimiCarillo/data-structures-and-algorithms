@@ -49,6 +49,7 @@ describe('Testing k-ary tree fizz buzz method', () =>
 
     let result = emptyKaryTree.treeFizzBuzz();
 
+    expect(result).toBeInstanceOf(KaryTree);
     expect(result.root === null).toBe(true);
   });
 });
