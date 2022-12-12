@@ -33,7 +33,7 @@ describe('Testing tree data structures', () =>
     testBinarySearchTree.add(5);
     testBinarySearchTree.add(7);
 
-    console.log('BST after adding everything: ', testBinarySearchTree.inOrder());
+    // console.log('BST after adding everything: ', testBinarySearchTree.inOrder());
 
     let result = testBinarySearchTree.inOrder();
     expect(result).toEqual([ 1, 2, 3, 4, 5, 6, 7 ]);
@@ -86,6 +86,18 @@ describe('Testing tree data structures', () =>
   test('Returns true|false for the contains method, given an existing or non-existing node value', () =>
   {
     let testBinarySearchTree = new BinarySearchTree();
+    testBinarySearchTree.add(4);
+    testBinarySearchTree.add(2);
+    testBinarySearchTree.add(6);
+    testBinarySearchTree.add(1);
+    testBinarySearchTree.add(3);
+    testBinarySearchTree.add(5);
+    testBinarySearchTree.add(7);
+
+    let trueResult = testBinarySearchTree.contains(5);
+    let falseResult = testBinarySearchTree.contains(9001);
+    expect(trueResult).toEqual(true);
+    expect(falseResult).toEqual(false);
   });
 
   /*
