@@ -1,9 +1,5 @@
 'use strict';
 
-// import Node class
-const { Node, Knode } = require('./Node.js');
-const Queue = require('./queue');
-
 class BinaryTree
 {
   constructor(root = null)
@@ -28,7 +24,6 @@ class BinaryTree
     }
     return preOrderArr;
   }
-
 
   inOrder(root = this.root, inOrderArr = [])
   {
@@ -63,43 +58,6 @@ class BinaryTree
       postOrderArr.push(root.data);
     }
     return postOrderArr;
-  }
-  // still working on this
-  // create an array to hold final results of the traversal
-  // create a queue to facilitate the order of traversal
-  breadthFirst(root = this.root, breadthArr = [], breadthQueue = new Queue())
-  {
-    if (root !== null)
-    {
-      breadthQueue.enqueue(root);
-      console.log('breadthQueue after enqueuing root: ', breadthQueue.toString());
-
-      // if the breadthQueue still has values in it
-      while (!breadthQueue.isEmpty())
-      {
-        // dequeue each item, in FiFo
-        let front = breadthQueue.dequeue();
-
-        // log of current front's data
-        console.log(front.data);
-
-        // push the data of the breadthQueue to the breadthArr, in Fifo
-        breadthArr.push(front.data);
-
-        // get all left data
-        if (front.left !== null)
-        {
-          breadthQueue.enqueue(front.left);
-        }
-
-        // then get all right data
-        if (front.right !== null)
-        {
-          breadthQueue.enqueue(front.right);
-        }
-      }
-    }
-    return breadthArr;
   }
 }
 

@@ -37,6 +37,10 @@ describe('Testing tree data structures', () =>
 
     let result = testBinarySearchTree.inOrder();
     expect(result).toEqual([ 1, 2, 3, 4, 5, 6, 7 ]);
+
+    console.log(testBinarySearchTree.preOrder());
+    console.log(testBinarySearchTree.inOrder());
+    console.log(testBinarySearchTree.postOrder());
   });
 
   test('Can successfully return a collection from a pre-order traversal', () =>
