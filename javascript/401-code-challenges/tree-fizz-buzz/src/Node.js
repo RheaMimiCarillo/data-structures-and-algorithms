@@ -14,9 +14,9 @@ class Node
 
 class Knode
 {
-  constructor(value, k)
+  constructor(data, k)
   {
-    this.value = value;
+    this.data = data;
     this.children = new Array(k);
   }
 }
