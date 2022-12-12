@@ -16,39 +16,48 @@ class BinarySearchTree extends BinaryTree
 
   // adds a new node in the correct position for a binary search tree
   // the `correct` position is ascending order, from left to right
-  add(data, currentRoot)
+  add(data)
   {
+    // make a new node
     let newNode = new Node(data);
+
     // base case
     // if the specified root is null, add the data right there
     if (this.root === null)
     {
-      currentRoot = newNode;
-      this.root = currentRoot;
-      console.log('new root Node in add() base case: ', currentRoot);
-      console.log('this.root: ', this.root);
-      console.log('total current tree when adding a new Node: ', this.preOrder());
+      this.root = newNode;
     }
-    // if the currentRoot is not falsy
-    if (currentRoot)
+    // if the tree is not empty add to the correct spot in BST
+    else
     {
-      // if the data passed in is less than the data of the current root,  go left
-      if (data < currentRoot.data)
+      this.addWhenNotEmpty(this.root, newNode);
+    }
+  }
+
+  addWhenNotEmpty(currentRoot, newNode)
+  {
+    if (newNode.data < currentRoot.data)
+    {
+      if (!currentRoot.left)
       {
-        currentRoot.left = this.add(data, currentRoot.left);
+        currentRoot.left = newNode;
       }
-      // if the data passed in is greater than the data of the current root, go right
-      else if (data > currentRoot.data)
+      else
       {
-        currentRoot.right = this.add(data, currentRoot.right);
-      }
-      // otherwise, if the data passed in is equivalent to the current root, it's a duplicate
-      else if (data === currentRoot.data)
-      {
-        return new Error('duplicate data already in tree');
+        this.addWhenNotEmpty(currentRoot.left, newNode);
       }
     }
-
+    else
+    {
+      if (!currentRoot.right)
+      {
+        currentRoot.right = newNode;
+      }
+      else
+      {
+        this.addWhenNotEmpty(currentRoot.right, newNode);
+      }
+    }
   }
 
 
@@ -56,7 +65,7 @@ class BinarySearchTree extends BinaryTree
   // returns a boolean whether or not a value is contained within the this tree at least once
   contains(data)
   {
-
+    
   }
 }
 

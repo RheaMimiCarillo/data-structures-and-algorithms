@@ -2,7 +2,7 @@
 
 const BinaryTree = require('../src/BinaryTree.js');
 const BinarySearchTree = require('../src/BinarySearchTree.js');
-const { Node, Knode } = require('../src/Node.js');
+const { Node } = require('../src/Node.js');
 
 describe('Testing tree data structures', () =>
 {
@@ -25,17 +25,18 @@ describe('Testing tree data structures', () =>
   test('For a Binary Search Tree, can successfully add a left child and right child properly to a node', () =>
   {
     let testBinarySearchTree = new BinarySearchTree();
-    testBinarySearchTree.add(10);
-    console.log('BST after adding 10: ', testBinarySearchTree.preOrder());
-    testBinarySearchTree.add(1);
-    console.log('BST after adding 1: ', testBinarySearchTree.preOrder());
-
-    testBinarySearchTree.add(100);
-    testBinarySearchTree.add(9001);
     testBinarySearchTree.add(4);
-    console.log('BST after adding everything: ', testBinarySearchTree.preOrder());
+    testBinarySearchTree.add(2);
+    testBinarySearchTree.add(6);
+    testBinarySearchTree.add(1);
+    testBinarySearchTree.add(3);
+    testBinarySearchTree.add(5);
+    testBinarySearchTree.add(7);
+
+    console.log('BST after adding everything: ', testBinarySearchTree.inOrder());
 
     let result = testBinarySearchTree.inOrder();
+    expect(result).toEqual([ 1, 2, 3, 4, 5, 6, 7 ]);
   });
 
   test('Can successfully return a collection from a pre-order traversal', () =>
