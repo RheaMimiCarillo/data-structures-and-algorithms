@@ -1,62 +1,92 @@
 'use strict';
 
-// import BinaryTree class
 const BinaryTree = require('./BinaryTree');
-// import Node class
-const { Node, Knode } = require('./Node.js');
-const Queue = require('./queue');
+const { Node } = require('./Node.js');
 
 class BinarySearchTree extends BinaryTree
 {
   constructor()
   {
-    // super() gets the constructor bits from the BinaryTree class
+    // extends BinaryTree class
     super();
   }
 
-  // adds a new node in the correct position for a binary search tree
-  // the `correct` position is ascending order, from left to right
-  add(data, currentRoot)
+  /**
+   * @param {any} data
+   * accepts data, create node, adds a new node in the correct position for a binary search tree
+   */
+  add(data)
   {
     let newNode = new Node(data);
-    // base case
-    // if the specified root is null, add the data right there
     if (this.root === null)
     {
-      currentRoot = newNode;
-      this.root = currentRoot;
-      console.log('new root Node in add() base case: ', currentRoot);
-      console.log('this.root: ', this.root);
-      console.log('total current tree when adding a new Node: ', this.preOrder());
+      this.root = newNode;
     }
-    // if the currentRoot is not falsy
-    if (currentRoot)
+    // if the tree is not empty, call helper function
+    else
     {
-      // if the data passed in is less than the data of the current root,  go left
-      if (data < currentRoot.data)
-      {
-        currentRoot.left = this.add(data, currentRoot.left);
-      }
-      // if the data passed in is greater than the data of the current root, go right
-      else if (data > currentRoot.data)
-      {
-        currentRoot.right = this.add(data, currentRoot.right);
-      }
-      // otherwise, if the data passed in is equivalent to the current root, it's a duplicate
-      else if (data === currentRoot.data)
-      {
-        return new Error('duplicate data already in tree');
-      }
+      this.addWhenNotEmpty(this.root, newNode);
     }
-
   }
 
+  /**
+   * @param {Node} currentRoot
+   * @param {Node} newNode
+   * accepts root node and new node and compares their values to add the newNode to the correct spot
+   */
+  addWhenNotEmpty(currentRoot, newNode)
+  {
+    if (newNode.data < currentRoot.data)
+    {
+      if (!currentRoot.left)
+      {
+        currentRoot.left = newNode;
+      }
+      else
+      {
+        this.addWhenNotEmpty(currentRoot.left, newNode);
+      }
+    }
+    else
+    {
+      if (!currentRoot.right)
+      {
+        currentRoot.right = newNode;
+      }
+      else
+      {
+        this.addWhenNotEmpty(currentRoot.right, newNode);
+      }
+    }
+  }
 
-
-  // returns a boolean whether or not a value is contained within the this tree at least once
+  /**
+   * @param {any} data
+   * @return {Boolean}
+   * accepts data and returns a Boolean whether or not a value is contained within the this tree at least once
+   */
   contains(data)
   {
+    // return false if BST is empty
+    if (this.root === null) return false;
+    return (this.containsWhenNotEmpty(this.root, data));
+  }
 
+  containsWhenNotEmpty(currentRoot, data)
+  {
+    {
+      if (currentRoot === null)
+        return false;
+
+      else if (data < currentRoot.data)
+        return this.containsWhenNotEmpty(currentRoot.left, data);
+
+      else if (data > currentRoot.data)
+        return this.containsWhenNotEmpty(currentRoot.right, data);
+
+      else
+        return true;
+    }
   }
 }
 
