@@ -8,6 +8,39 @@ class BinaryTree
   }
 
   /**
+   * @return {Number} highest value in the tree
+   * returns the highest (numerical) value stored in this tree
+   */
+  findMax()
+  {
+
+    if (this.root === null) return new Error('Tree is empty');
+
+    const traversal = (currentRoot, currentMax) =>
+    {
+      if (currentRoot !== null)
+      {
+        if (currentRoot.data > currentMax)
+        {
+          currentMax = currentRoot.data;
+        }
+
+        if (currentRoot.left)
+        {
+          traversal(currentRoot, currentRoot.left);
+        }
+
+        if (currentRoot.right)
+        {
+          traversal(currentRoot, currentRoot.left);
+        }
+      }
+    };
+
+    console.log(traversal(this.root, this.root.data));
+  }
+
+  /**
    * @param {root} root of this Binary Tree, by default
    * @param {Array} preOrderArr, target array
    * @return {Array} collection of data from a pre-order traversal
