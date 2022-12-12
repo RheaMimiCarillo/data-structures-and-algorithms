@@ -33,14 +33,8 @@ describe('Testing tree data structures', () =>
     testBinarySearchTree.add(5);
     testBinarySearchTree.add(7);
 
-    // console.log('BST after adding everything: ', testBinarySearchTree.inOrder());
-
     let result = testBinarySearchTree.inOrder();
     expect(result).toEqual([ 1, 2, 3, 4, 5, 6, 7 ]);
-
-    console.log(testBinarySearchTree.preOrder());
-    console.log(testBinarySearchTree.inOrder());
-    console.log(testBinarySearchTree.postOrder());
   });
 
   test('Can successfully return a collection from a pre-order traversal', () =>
@@ -108,18 +102,16 @@ describe('Testing tree data structures', () =>
   test('Can successfully return a collection from a breadth-first traversal', () =>
   {
     let testBinarySearchTree = new BinarySearchTree();
-
-    testBinarySearchTree.add(10);
-    testBinarySearchTree.add(1);
-    testBinarySearchTree.add(100);
-    testBinarySearchTree.add(9001);
     testBinarySearchTree.add(4);
+    testBinarySearchTree.add(2);
+    testBinarySearchTree.add(6);
+    testBinarySearchTree.add(1);
+    testBinarySearchTree.add(3);
+    testBinarySearchTree.add(5);
+    testBinarySearchTree.add(7);
 
-    //console.log('breadthFirst: ', testBinarySearchTree.breadthFirst());
     let breadthFirstResult = testBinarySearchTree.breadthFirst();
-    //console.log(breadthFirstResult);
-
+    expect(result).toEqual([ 4, 2, 6, 1, 3, 5, 7 ]);
   });
   */
-
 });

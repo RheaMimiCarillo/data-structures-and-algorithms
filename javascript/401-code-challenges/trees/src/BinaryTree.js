@@ -7,6 +7,12 @@ class BinaryTree
     this.root = root;
   }
 
+  /**
+   * @param {root} root of this Binary Tree, by default
+   * @param {Array} preOrderArr, target array
+   * @return {Array} collection of data from a pre-order traversal
+   * accepts no parameters by default, (or a specified root and target array), and returns a collection of data from a pre-order traversal of this Binary Tree's nodes
+   */
   preOrder(root = this.root, preOrderArr = [])
   {
     if (root !== null)
@@ -25,6 +31,12 @@ class BinaryTree
     return preOrderArr;
   }
 
+  /**
+   * @param {root} root of this Binary Tree, by default
+   * @param {Array} inOrderArr, target array
+   * * @return {Array} collection of data from an in-order traversal
+   * accepts no parameters by default, (or a specified root and target array), and returns a collection of data from an in-order traversal of this Binary Tree's nodes
+   */
   inOrder(root = this.root, inOrderArr = [])
   {
     if (root !== null)
@@ -42,6 +54,12 @@ class BinaryTree
     return inOrderArr;
   }
 
+  /**
+   * @param {root} root of this Binary Tree, by default
+   * @param {Array} postOrderArr, target array
+   * @return {Array} collection of data from a post-order traversal
+   * accepts no parameters by default, (or a specified root and target array), and returns a collection of data from a post-order traversal of this Binary Tree's nodes
+   */
   postOrder(root = this.root, postOrderArr = [])
   {
     if (root !== null)

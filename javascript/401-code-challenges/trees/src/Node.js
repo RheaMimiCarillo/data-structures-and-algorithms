@@ -1,9 +1,8 @@
 'use strict';
 
-
 class Node
 {
-  // left and right are null, by default
+  // left and right children pointers are null, by default
   constructor(data, left = null, right = null)
   {
     this.data = data;
@@ -13,9 +12,10 @@ class Node
   }
 }
 
-// what's `Knode' used for?
-class Knode {
-  constructor(value, k) {
+class Knode
+{
+  constructor(value, k)
+  {
     this.value = value;
     this.children = new Array(k);
   }

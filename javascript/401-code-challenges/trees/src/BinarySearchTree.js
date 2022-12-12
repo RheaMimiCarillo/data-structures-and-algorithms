@@ -1,39 +1,39 @@
 'use strict';
 
-// import BinaryTree class
 const BinaryTree = require('./BinaryTree');
-// import Node class
-const { Node, Knode } = require('./Node.js');
-const Queue = require('./queue');
+const { Node } = require('./Node.js');
 
 class BinarySearchTree extends BinaryTree
 {
   constructor()
   {
-    // super() gets the constructor bits from the BinaryTree class
+    // extends BinaryTree class
     super();
   }
 
-  // adds a new node in the correct position for a binary search tree
-  // the `correct` position is ascending order, from left to right
+  /**
+   * @param {any} data
+   * accepts data, create node, adds a new node in the correct position for a binary search tree
+   */
   add(data)
   {
-    // make a new node
     let newNode = new Node(data);
-
-    // base case
-    // if the specified root is null, add the data right there
     if (this.root === null)
     {
       this.root = newNode;
     }
-    // if the tree is not empty add to the correct spot in BST
+    // if the tree is not empty, call helper function
     else
     {
       this.addWhenNotEmpty(this.root, newNode);
     }
   }
 
+  /**
+   * @param {Node} currentRoot
+   * @param {Node} newNode
+   * accepts root node and new node and compares their values to add the newNode to the correct spot
+   */
   addWhenNotEmpty(currentRoot, newNode)
   {
     if (newNode.data < currentRoot.data)
@@ -60,22 +60,15 @@ class BinarySearchTree extends BinaryTree
     }
   }
 
-
-
-  // returns a boolean whether or not a value is contained within the this tree at least once
+  /**
+   * @param {any} data
+   * @return {Boolean}
+   * accepts data and returns a Boolean whether or not a value is contained within the this tree at least once
+   */
   contains(data)
   {
     // return false if BST is empty
     if (this.root === null) return false;
-
-    /* strategy:
-      traverse/search tree efficiently, so that I don't look at nodes I don't have to
-
-      when I see a child that's greater than my data, go left
-      when I see a child that's less than my data, go right
-      when I see a node's data that's not greater than or less than my data, return true
-      if we reach the end of the tree without matches, return false
-    */
     return (this.containsWhenNotEmpty(this.root, data));
   }
 
