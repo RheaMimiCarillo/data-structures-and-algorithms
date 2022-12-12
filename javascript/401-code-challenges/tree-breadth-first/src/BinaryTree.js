@@ -15,7 +15,7 @@ class BinaryTree
    */
   breadthFirst()
   {
-    let result = [];
+    let results = [];
 
     if (this.root !== null)
     {
@@ -26,7 +26,7 @@ class BinaryTree
       while (!breadthFirstQueue.isEmpty())
       {
         let front = breadthFirstQueue.dequeue();
-        result.push(front.data);
+        results.push(front.data);
 
         if (front.left)
         {
@@ -39,7 +39,7 @@ class BinaryTree
         }
       }
     }
-    return result;
+    return results;
   }
 
   /**
