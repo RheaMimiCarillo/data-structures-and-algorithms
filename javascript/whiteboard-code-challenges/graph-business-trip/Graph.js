@@ -1,7 +1,7 @@
 'use strict';
 
-const Stack = require('./stack-and-queue/stack');
-const Queue = require('./stack-and-queue/queue');
+const Stack = require('./graph-breadth-first/stack-and-queue/stack');
+const Queue = require('./graph-breadth-first/stack-and-queue/queue');
 
 class Vertex
 {
