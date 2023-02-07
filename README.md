@@ -33,10 +33,10 @@ Here you can peruse the collection of Data Structures and Algorithms challenges 
 
 #### Linked List
 
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
+- Linked List Class [linked-list](./javascript/whiteboard-code-challenges/linked-list/README.md)
+- Linked List Insertions [linked-list-insertions](./javascript/whiteboard-code-challenges/linked-list-insertions/README.md)
+- Linked List Kth [linked-list-kth](./javascript/whiteboard-code-challenges/linked-list-kth/README.md)
+- Linked List Zip [linked-list-zip](./javascript/whiteboard-code-challenges/linked-list-zip/README.md)
 
 
 #### Stack and Queue
