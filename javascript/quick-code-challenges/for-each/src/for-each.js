@@ -58,7 +58,6 @@ const allUpperCase = (arr) =>
   // upperArr = arr with all values uppercase
   let upperArr = [];
 
-
   // traverse through each item in arr and .toUpperCase()
   arr.forEach(value => upperArr.push(value.toUpperCase()));
 

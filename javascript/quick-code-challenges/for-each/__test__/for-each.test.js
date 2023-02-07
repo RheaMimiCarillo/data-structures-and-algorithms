@@ -10,7 +10,7 @@ const {
   addNumbers,
   createList,
   fizzbuzz
-} = require('../src/challenges-01.js');
+} = require('../src/for-each.js');
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
