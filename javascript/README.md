@@ -1,85 +1,50 @@
-# Data Structures and Algorithms
+# JavaScript Data Structures and Algorithms
 
-## Language: `JavaScript`
+## Table of Contents
 
-### Folder and Challenge Setup
+### Quick Code Challenges
 
-Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
+- Quick Code Challenges [quick-code-challenges](./quick-code-challenges/README.md)
 
-### Data Structure: New Implementation
+### Whiteboard Code Challenges
 
-- Create a new folder under the `javascript` level, with the name of the data structure and complete your implementation there
-  - i.e. `linked-list`
-- Implementation (the data structure "class")
-  - The implementation of the data structure must be named `index.js`
-  - Your implementation must be completed as a proper ES6 Class, and exported as a node module
-    - Class Name must be `ProperCase`
-    - Class Methods must be `camelCase`
+#### Array
 
-    ```javascript
-    class LinkedList {
-      constructor() {
-        // code
-      }
+- Array Binary Search [array-binary-search](./whiteboard-code-challenges/array-binary-search/README.md)
+- Array Insert Shift [array-insert-shift](./whiteboard-code-challenges/array-insert-shift/)
+- Array Reverse [array-reverse](.//whiteboard-code-challenges//array-reverse/README.md)
 
-      methodName() {
-        // code
-      }
+#### Graph
 
-    }
-    module.exports = LinkedList;
-    ```
+- Graph Class [graph](.//whiteboard-code-challenges/graph/README.md)
+- Graph Breadth-first [graph-breadth-first](./whiteboard-code-challenges/graph-breadth-first/README.md)
+- Graph Depth-first [graph-depth-first](./whiteboard-code-challenges/graph-depth-first/README.md)
+- Graph Business Trip [graph-business-trip](./whiteboard-code-challenges/graph-business-trip/README.md)
 
-- Tests
-  - Create folder named `__tests__` and within it, a test file called `[data-structure].test.js`
-    - i.e. `__tests__/linked-list.test.js`
-    - Your tests will then need to require the data structure you're testing
-      - i.e. `const LinkedList = require('../index');
+#### Hashmap
 
-### Data Structure: Extending an implementation
+- Hashtable Class [hashtable](./whiteboard-code-challenges/hashtable/README.md)
+- Hashmap Left Join [hashmap-left-join](./whiteboard-code-challenges/hashmap-left-join/README.md)
+- Hashmap Repeated Word[hashmap-repeated-word](./whiteboard-code-challenges/hashmap-repeated-word/README.md)
+- Tree Intersection[tree-intersection](./whiteboard-code-challenges/tree-intersection/README.md)
 
-- Work within the data structure implementation
-- Create a new method within the class that solves the code challenge
-  - Remember, you'll have access to `this` within your class methods
-- Tests
-  - You will have folder named `__tests__` and within it, a test file called `[data-structure].test.js`
-    - i.e. `__tests__/linked-list.test.js`
-    - Add to the tests written for this data structure to cover your new method(s)
+#### Linked List
 
-### Code Challenge / Algorithm
+- Linked List Class [linked-list](./whiteboard-code-challenges/linked-list/README.md)
+- Linked List Insertions [linked-list-insertions](./whiteboard-code-challenges/linked-list-insertions/README.md)
+- Linked List Kth [linked-list-kth](./whiteboard-code-challenges/linked-list-kth/README.md)
+- Linked List Zip [linked-list-zip](./whiteboard-code-challenges/linked-list-zip/README.md)
 
-Code challenges should be completed within a folder named `code-challenges` under the `javascript` level
+#### Stack and Queue
 
-- Daily Setup:
-  - Create a new folder under the `javascript` level, with the name of the code challenge
-    - Each code challenge assignment identifies the branch name to use, for example 'find-maximum-value'
-    - For clarity, create your folder with the same name, ensuring that it's `kebab-cased`
-    - i.e. For a challenge named 'find-maximum-value', create the folder:`code-challenges/find-maximum-value`
-  - Code Challenge Implementation
-    - Each code challenge requires a function be written, for example "find maximum value"
-    - Name the actual challenge file with the name of the challenge, in `kebab-case`
-      - i.e. `find-maximum-value.js`
-    - Reminder: Your challenge file will then need to require the data structure you're using to implement
-      - i.e. `const LinkedList = require('../linked-list');
-    - Your challenge function name is up to you, but it's recommended that you use camel case
-      - i.e. `function findMaximumValue(list) { ... }`
-    - Be sure to export your function so that you can write tests
-  - Tests
-    - Create folder named `__tests__` and within it, a test file called `[challenge].test.js`
-      - i.e. `__tests__/find-maximum-value.test.js`
-      - Your test file would require the challenge file found in the directory above, which has your exported function
-        - i.e. `const reverse = require('../find-maximum-value.js');
+- Stack and Queue Class [stack-and-queue](./whiteboard-code-challenges)
+- Stack and Queue Animal Shelter [stack-queue-animal-shelter](./whiteboard-code-challenges/stack-queue-animal-shelter/README.md)
+- Stack and Queue Brackets [stack-queue-brackets](./whiteboard-code-challenges/stack-queue-brackets/README.md)
+- Stack and Queue Pseudo [stack-queue-pseudo](./whiteboard-code-challenges/stack-queue-pseudo/README.md)
 
-## Running Tests
+#### Tree
 
-If you setup your folders according to the above guidelines, running tests becomes a matter of deciding which tests you want to execute.  Jest does a good job at finding the test files that match what you specify in the test command
-
-From the `data-structures-and-algorithms/javascript` folder, execute the following commands:
-
-- **Run every possible test** - `npm test`
-- **Run a test for a data structure** - `npm test linked-list`
-- **Run a test for a specific challenge** - `npm test reverse-ll`
-
-#### Live Tests
-
-Note that when you check your code into GitHub, all of your tests will automatically execute. These results should match your own, and will be found on the  **Actions** tab
+- Tree Class [trees](./whiteboard-code-challenges/trees//README.md)
+- Tree Breadth-first [tree-breadth-first](./whiteboard-code-challenges/tree-breadth-first/README.md)
+- Tree Fizz Buzz [Tree Fizz Buzz](./whiteboard-code-challenges/tree-fizz-buzz/README.md)
+- Tree Max [Tree Max](./whiteboard-code-challenges/tree-max/README.md)

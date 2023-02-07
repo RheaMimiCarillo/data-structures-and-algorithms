@@ -1,29 +1,53 @@
 # Data Structures and Algorithms
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+Here you can peruse the collection of Data Structures and Algorithms challenges I've tackled.
 
-## Repository Quick Tour and Usage
+## Table of Contents
 
-### 301 Code Challenges
+### Quick Code Challenges
 
-Under the `javascript` folder, at the top level, is a sub-folder called `code-challenges`
+- Quick Code Challenges [quick-code-challenges](./javascript/quick-code-challenges/README.md)
 
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
+### Whiteboard Code Challenges
 
-If you have not already done so, run `npm install` from within this folder to setup your system to be able to run tests using `Jest`
+#### Array
 
-To run your tests
+- Array Binary Search [array-binary-search](./javascript/whiteboard-code-challenges/array-binary-search/README.md)
+- Array Insert Shift [array-insert-shift](./javascript/whiteboard-code-challenges/array-insert-shift/)
+- Array Reverse [array-reverse](./javascript//whiteboard-code-challenges//array-reverse/README.md)
 
-- Change to the `javascript` folder
-- run `npm test` to run all of the tests
-- run `npm test ##` to only run tests for challenge ## (i.e. 01)
+#### Graph
 
-### 401 Data Structures, Code Challenges
+- Graph Class [graph](./javascript//whiteboard-code-challenges/graph/README.md)
+- Graph Breadth-first [graph-breadth-first](./javascript/whiteboard-code-challenges/graph-breadth-first/README.md)
+- Graph Depth-first [graph-depth-first](./javascript/whiteboard-code-challenges/graph-depth-first/README.md)
+- Graph Business Trip [graph-business-trip](./javascript/whiteboard-code-challenges/graph-business-trip/README.md)
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+#### Hashmap
 
-#### 401 Table of Contents
+- Hashtable Class [hashtable](./javascript/whiteboard-code-challenges/hashtable/README.md)
+- Hashmap Left Join [hashmap-left-join](./javascript/whiteboard-code-challenges/hashmap-left-join/README.md)
+- Hashmap Repeated Word[hashmap-repeated-word](./javascript/whiteboard-code-challenges/hashmap-repeated-word/README.md)
+- Tree Intersection[tree-intersection](./javascript/whiteboard-code-challenges/tree-intersection/README.md)
 
-- [array-reverse](./401-challenges/array-reverse/README.md)
-- [array-insert-shift](./401-challenges/array-insert-shift/README.md)
-- [linked-list](./401-challenges/linked-list/README.md)
+#### Linked List
+
+- Linked List Class [linked-list](./javascript/whiteboard-code-challenges/linked-list/README.md)
+- Linked List Insertions [linked-list-insertions](./javascript/whiteboard-code-challenges/linked-list-insertions/README.md)
+- Linked List Kth [linked-list-kth](./javascript/whiteboard-code-challenges/linked-list-kth/README.md)
+- Linked List Zip [linked-list-zip](./javascript/whiteboard-code-challenges/linked-list-zip/README.md)
+
+
+#### Stack and Queue
+
+- Stack and Queue Class [stack-and-queue](./javascript/whiteboard-code-challenges)
+- Stack and Queue Animal Shelter [stack-queue-animal-shelter](./javascript/whiteboard-code-challenges/stack-queue-animal-shelter/README.md)
+- Stack and Queue Brackets [stack-queue-brackets](./javascript/whiteboard-code-challenges/stack-queue-brackets/README.md)
+- Stack and Queue Pseudo [stack-queue-pseudo](./javascript/whiteboard-code-challenges/stack-queue-pseudo/README.md)
+
+#### Tree
+
+- Tree Class [trees](./javascript/whiteboard-code-challenges/trees//README.md)
+- Tree Breadth-first [tree-breadth-first](./javascript/whiteboard-code-challenges/tree-breadth-first/README.md)
+- Tree Fizz Buzz [Tree Fizz Buzz](./javascript/whiteboard-code-challenges/tree-fizz-buzz/README.md)
+- Tree Max [Tree Max](./javascript/whiteboard-code-challenges/tree-max/README.md)
