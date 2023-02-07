@@ -41,10 +41,10 @@ Here you can peruse the collection of Data Structures and Algorithms challenges 
 
 #### Stack and Queue
 
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
+- Stack and Queue Class [stack-and-queue](./javascript/whiteboard-code-challenges)
+- Stack and Queue Animal Shelter [stack-queue-animal-shelter](./javascript/whiteboard-code-challenges/stack-queue-animal-shelter/README.md)
+- Stack and Queue Brackets [stack-queue-brackets](./javascript/whiteboard-code-challenges/stack-queue-brackets/README.md)
+- Stack and Queue Pseudo [stack-queue-pseudo](./javascript/whiteboard-code-challenges/stack-queue-pseudo/README.md)
 
 #### Tree
 
