@@ -23,7 +23,6 @@ Here you can peruse the collection of Data Structures and Algorithms challenges 
 - Graph Depth-first [graph-depth-first](./javascript/whiteboard-code-challenges/graph-depth-first/README.md)
 - Graph Business Trip [graph-business-trip](./javascript/whiteboard-code-challenges/graph-business-trip/README.md)
 
-
 #### Hashmap
 
 - Hashtable Class [hashtable](./javascript/whiteboard-code-challenges/hashtable/README.md)
