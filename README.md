@@ -6,7 +6,7 @@ Here you can peruse the collection of Data Structures and Algorithms challenges 
 
 ### Quick Code Challenges
 
-
+- Quick Code Challenges [quick-code-challenges](./javascript/quick-code-challenges/README.md)
 
 ### Whiteboard Code Challenges
 
