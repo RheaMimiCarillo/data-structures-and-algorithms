@@ -48,7 +48,7 @@ Here you can peruse the collection of Data Structures and Algorithms challenges 
 
 #### Tree
 
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
-- [](./javascript/whiteboard-code-challenges)
+- Tree Class [trees](./javascript/whiteboard-code-challenges/trees//README.md)
+- Tree Breadth-first [tree-breadth-first](./javascript/whiteboard-code-challenges/tree-breadth-first/README.md)
+- Tree Fizz Buzz [Tree Fizz Buzz](./javascript/whiteboard-code-challenges/tree-fizz-buzz/README.md)
+- Tree Max [Tree Max](./javascript/whiteboard-code-challenges/tree-max/README.md)
