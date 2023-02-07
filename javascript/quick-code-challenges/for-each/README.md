@@ -1,6 +1,6 @@
 # For Each
 
-Code Challenges utilizing the [JavaScript forEach() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach()).
+Code Challenges utilizing the [JavaScript forEach() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 ## Tests
 
