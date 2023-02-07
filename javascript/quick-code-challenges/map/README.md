@@ -4,4 +4,4 @@ Code Challenges utilizing the [JavaScript map() method](https://developer.mozill
 
 ## Tests
 
-Run your tests from the console: `npm test map`.
+Run your tests from the console: `npm test map.test.js`.

@@ -4,4 +4,4 @@ Code Challenges utilizing the [JavaScript forEach() method](https://developer.mo
 
 ## Tests
 
-Run your tests from the console: `npm test for-each`.
+Run your tests from the console: `npm test for-each.test.js`.
