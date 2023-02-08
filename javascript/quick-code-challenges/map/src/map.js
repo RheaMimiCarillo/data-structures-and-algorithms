@@ -59,7 +59,7 @@ const forLoopTwoToThe = (arr) =>
 
   for (let i = 0; i < arr.length; i++)
   {
-    twodleLoo.push(Math.pow(2, arr[i]));
+    twodleLoo.push(Math.pow(2, arr[ i ]));
   }
   return twodleLoo;
 };
@@ -117,13 +117,16 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) =>
 {
-  // Solution code here...
-
-  let evenOddArr = arr.map(num =>
+  let evenOddArr = arr.map(value =>
   {
-    if (typeof num === 'number')
+    if (typeof value === 'number')
     {
-      num % 2 ? 'even' : 'odd';
+      // ternary that evaluates whether the current `value`'s remainder is truthy or falsy (0 or 1) and returns the corresponding string
+      return value % 2 ? 'odd' : 'even';
+    }
+    else
+    {
+      return 'N/A';
     }
   });
 
