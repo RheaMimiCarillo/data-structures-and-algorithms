@@ -15,7 +15,7 @@ const {
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
-Run your tests from the console: npm test for-each
+Run your tests from the console: npm test for-each.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
