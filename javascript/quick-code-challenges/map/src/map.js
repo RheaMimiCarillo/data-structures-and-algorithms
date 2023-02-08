@@ -177,7 +177,7 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) =>
 {
-  // Solution code here...
+  return arr.map(ability => ability.ability.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -225,7 +225,12 @@ const snorlaxStats = {
 
 const extractStats = (arr) =>
 {
-  // Solution code here...
+  return arr.map(stat => (
+    {
+      name: stat.stat.name,
+      total: stat.effort + stat.baseStat
+    }
+  ));
 };
 
 
@@ -238,6 +243,8 @@ module.exports = {
   mapTwoToThe,
   charCode,
   evenOdd,
+  snorlaxAbilities,
   extractAbilities,
+  snorlaxStats,
   extractStats
 };

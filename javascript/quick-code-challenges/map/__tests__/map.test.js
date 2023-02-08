@@ -9,7 +9,9 @@ const {
   mapTwoToThe,
   charCode,
   evenOdd,
+  snorlaxAbilities,
   extractAbilities,
+  snorlaxStats,
   extractStats
 } = require('../src/map');
 
