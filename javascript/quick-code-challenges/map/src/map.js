@@ -102,7 +102,7 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) =>
 {
-  // Solution code here...
+  return arr.map(char => char.charCodeAt(0));
 };
 
 /* ------------------------------------------------------------------------------------------------
