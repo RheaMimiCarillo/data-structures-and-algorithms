@@ -8,10 +8,7 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) =>
 {
-  // Solution code here...
-
-  let plusTwoArr = arr.map(num => num + 2);
-  return plusTwoArr;
+  return arr.map(num => num + 2);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,8 +21,7 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) =>
 {
-  // Solution code here...
-  // arr is an array of mixed data types
+  // input arr[] is an array with mixed data types
   let numOnlyArr = arr.filter(thing => typeof (thing) === 'number');
 
   return numOnlyArr;
