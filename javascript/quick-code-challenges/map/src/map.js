@@ -11,16 +11,13 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 const raisedToTheThird = (arr) =>
 {
-  // arr is an array of numbers
-
-  // make a new array
   let thirdPowArr = [];
 
-  // raise each value in arr to the power of 3 and push to thirdPowArr
+  // for each value from input arr[]
+  //  raise each value to the power of 3
+  //  push() the new value to thirdPowArr[]
   arr.forEach(num => thirdPowArr.push(Math.pow(num, 3)));
 
-  // console.log(thirdPowArr);
-  // return the array
   return thirdPowArr;
 };
 
@@ -32,11 +29,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) =>
 {
-  // Solution code here...
-
-  let arrPlusOne = arr.map(num => num + 1);
-
-  return arrPlusOne;
+  return arr.map(num => num + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -47,13 +40,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) =>
 {
-  // Solution code here...
-  // arr is an array of strings
-
-  // must use .map()
-  let inquisitiveArr = arr.map(string => string + '?');
-
-  return inquisitiveArr;
+  return arr.map(string => string + '?');
 };
 
 /* ------------------------------------------------------------------------------------------------
