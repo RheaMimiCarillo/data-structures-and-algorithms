@@ -22,9 +22,7 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 const typeNum = (arr) =>
 {
   // input arr[] is an array with mixed data types
-  let numOnlyArr = arr.filter(thing => typeof (thing) === 'number');
-
-  return numOnlyArr;
+  return arr.filter(thing => typeof (thing) === 'number');
 };
 
 /* ------------------------------------------------------------------------------------------------
