@@ -195,7 +195,11 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 
 const evenOddNumericValues = (arr) =>
 {
-  // Solution code here...
+  // use filter to remove elements that aren't fully numeric
+  let numberOnly = arr.filter(element => typeof element === 'number');
+
+  // use map() to return a NEW array containing the string representation of the evenness for each element
+  return numberOnly.map(number => number % 2 ? 'odd' : 'even');
 };
 
 module.exports = {
