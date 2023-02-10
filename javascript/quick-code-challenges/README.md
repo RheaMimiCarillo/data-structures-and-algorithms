@@ -4,7 +4,7 @@
 
 - Run All Tests: `npm test`
 - Run a specific test: `npm test <file name here>`
-  - ex --> `npm test for-each`
+  - ex --> `npm test for-each.test.js`
 
 ## Table of Contents
 
