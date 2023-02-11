@@ -63,7 +63,7 @@ HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 
 const sortBackwards = (arr) =>
 {
-  // Solution code here...
+  // if b - a is a positive number, -> b is larger than a -> switch indices of b with a to move b to a lower index in the array
   return arr.sort((a, b) => b - a);
 };
 
