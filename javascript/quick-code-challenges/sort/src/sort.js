@@ -49,12 +49,7 @@ HINT: Beware... JS default is "Lexical" ordering.
 
 const sortNumbers = (arr) =>
 {
-  // Solution code here...
-
-  // arr is an array of numbers
-  // return an array sorted from lowest to highest
-
-  // return an array where a and b are compared and if a - b is a positive number, a is larger than b and will switch indices with b
+  // if a - b is a positive number -> a is larger than b -> so switch the positions of a with b to move a to a higher index
   return arr.sort((a, b) => a - b);
 };
 
