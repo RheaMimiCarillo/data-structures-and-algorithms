@@ -10,7 +10,6 @@ Push each updated animal string into the new array. Return the new array.
 HINT: Look at the tests to see how the callback functions are used.
 
 ------------------------------------------------------------------------------------------------ */
-// sort() works by comparing character codes, so things won't exactly be in the order I want all the time
 
 function upper(str)
 {
@@ -24,20 +23,7 @@ function lower(str)
 
 const updateAnimal = (arr, callback) =>
 {
-  // Solution code here...
-
-  // write `updateAnimal`
-  // 1. create a new array
-  // 2. traverse the array
-  // 3. modify each value using a callback function
-  // 4. push the modified value into the new array
-  // 5. return the new array
-
-  // arr is an array of strings
-
-  let sortedAnimals = arr.map(animal => callback(animal));
-
-  return sortedAnimals;
+  return arr.map(animal => callback(animal));
 };
 
 /* ------------------------------------------------------------------------------------------------
