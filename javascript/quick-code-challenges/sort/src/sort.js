@@ -79,9 +79,6 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) =>
 {
-  // Solution code here...
-
-  // how is different from challenge 2??
   return arr.sort();
 };
 
@@ -100,17 +97,11 @@ Here is an example of the input:
 
 const sortByPrice = (arr) =>
 {
-  // Solution code here...
-
-  // arr is an array of objects that have a 'price' property
   // 1. traverse an the arr
-  // 2. look at each item.price
-  // 3. sort with item.price comparator
+  // 2. look at each item's .price property
+  // 3. sort with by item.price, from lowest to highest
   // 4. return the array
-
-  let cheapExpensive = arr.sort((item1, item2) => item1.price - item2.price);
-
-  return cheapExpensive;
+  return arr.sort((item1, item2) => item1.price - item2.price);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,7 +114,12 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) =>
 {
-  // Solution code here...
+  /* strategy
+    1. traverse the array
+    2. at each iteration, look at the .toLowerCase() version of each element
+    3. sort alphabetically by the .toLowerCase() version
+    4. return the array
+  */
 };
 
 /* ------------------------------------------------------------------------------------------------
