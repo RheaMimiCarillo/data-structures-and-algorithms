@@ -114,12 +114,9 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) =>
 {
-  /* strategy
-    1. traverse the array
-    2. at each iteration, look at the .toLowerCase() version of each element
-    3. sort alphabetically by the .toLowerCase() version
-    4. return the array
-  */
+  // help from MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+  // localeCompare() is useful for doing sorts on languages where .toLowerCase() doesn't work with
+  return arr.sort((a, b) => a.localeCompare(b));
 };
 
 /* ------------------------------------------------------------------------------------------------
