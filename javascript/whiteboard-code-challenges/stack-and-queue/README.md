@@ -72,8 +72,6 @@ Create a `Node` class that has properties for the value stored in the `Node`, an
 
 ### Whiteboard
 
-Credit to Jacob Knaack, Jordan Yamada,##and Alfredo Ortiz for contributing to this whiteboard
-
 #### Stack
 
 - ![Stack](./images/stack.png "Stack")
