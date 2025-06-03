@@ -36,7 +36,7 @@ class BinarySearchTree extends BinaryTree
    */
   addWhenNotEmpty(currentRoot, newNode)
   {
-    if (newNode.data < currentRoot.data)
+    if (newNode.data < currentRoot.data) // if false-y
     {
       if (!currentRoot.left)
       {
@@ -49,7 +49,7 @@ class BinarySearchTree extends BinaryTree
     }
     else
     {
-      if (!currentRoot.right)
+      if (!currentRoot.right) // if false-y
       {
         currentRoot.right = newNode;
       }
